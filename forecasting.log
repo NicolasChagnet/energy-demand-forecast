@@ -1,0 +1,17 @@
+2024-07-01 19:53:13,267 INFO Downloading new data...
+2024-07-01 19:53:13,267 INFO Training new model...
+2024-07-01 19:53:13,388 WARNING Last download less than 24h ago, aborting download...
+2024-07-01 19:53:13,388 INFO Initializing LGBM Forecaster 0
+2024-07-01 19:53:13,389 INFO Tuning Forecaster 0
+2024-07-01 19:54:19,447 INFO Tuning results: 
+2024-07-01 19:54:19,448 INFO Best parameters: lags                                                                   [4, 6, 7, 8]
+params                            {'num_leaves': 37, 'max_depth': 15, 'learning_...
+mean_absolute_percentage_error                                             0.030709
+num_leaves                                                                     37.0
+max_depth                                                                      15.0
+learning_rate                                                              0.013531
+n_estimators                                                                  278.0
+reg_alpha                                                                  0.094817
+Name: 9, dtype: object
+2024-07-01 19:54:19,448 INFO Model trained with data from 2019-01-01 00:00:00+00:00 until 2024-06-29 23:00:00+00:00!
+2024-07-01 19:54:19,448 INFO Saving Forecaster 0 to /home/runner/work/energy-demand-forecast/energy-demand-forecast/models/lgbm_forecaster_0.joblib.
