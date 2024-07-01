@@ -1,0 +1,41 @@
+name: Download and Train
+on:
+    schedule:
+        - cron: "0 0 * * MON"
+    workflow_dispatch:
+jobs:
+    download-tune:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repo content
+              uses: actions/checkout@v4
+              with:
+                token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Use the PAT instead of the default GITHUB_TOKEN
+            - name: Setup python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.11.9'
+                cache: 'pip'
+            - name: Install dependencies
+              run: pip install -r requirements.txt
+            - name: Make envfile
+              uses: SpicyPizza/create-envfile@v2.0
+              with:
+                envkey_API_KEY: ${{ secrets.API_KEY }}
+                file_name: .env
+                fail_on_empty: false
+                sort_keys: false
+            - name: Run commands for download and training
+              run: python main.py -d & python main.py -t # run data pipeline
+            - name: Check for changes # create env variable indicating if any changes were made
+              id: git-check
+              run: |
+                git config user.name 'github-actions'
+                git config user.email 'github-actions@github.com'
+                git add .
+                git diff --staged --quiet || echo "changes=true" >> $GITHUB_ENV 
+            - name: Commit and push if changes
+              if: env.changes == 'true' # if changes made push new data to repo
+              run: |
+                git commit -m "updated video index"
+                git push
