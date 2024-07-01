@@ -192,3 +192,8 @@ Name: 9, dtype: object
 2024-07-01 22:36:40,475 INFO Backtesting on training data with MAPE 0.03!
 2024-07-01 22:36:40,638 INFO Backtesting on training data with MAPE 0.03!
 2024-07-01 22:36:40,745 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:44:47,170 INFO Making predictions using previous model...
+2024-07-01 22:44:47,170 INFO Making predictions with Forecaster 0
+2024-07-01 22:44:49,558 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:44:49,565 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:44:51,193 INFO Backtesting on training data with MAPE 0.03!

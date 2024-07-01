@@ -15,6 +15,8 @@ A demo is available on [Streamlit](https://energy-demand-forecast-france.streaml
 
 * [France actual energy load](https://transparency.entsoe.eu/load-domain/r2/totalLoadR2/show?name=&defaultValue=false&viewType=GRAPH&areaType=CTA&atch=false&dateTime.dateTime=01.07.2024%2000:00|CET%7CDAYTIMERANGE&dateTime.endDateTime=01.07.2024%2000:00|CET%7CDAYTIMERANGE&biddingZone.values=CTY%7C10YFR-RTE------C!CTA%7C10YFR-RTE------C&dateTime.timezone=CET_CEST&dateTime.timezone_input=CET+(UTC+1)+/+CEST+(UTC+2))
 
+![plot_demo.png](plot_demo.png)
+
 ### Methods Used
 * Data Analysis
 * Machine Learning
