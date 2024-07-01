@@ -15,3 +15,180 @@ reg_alpha                                                                  0.094
 Name: 9, dtype: object
 2024-07-01 19:54:19,448 INFO Model trained with data from 2019-01-01 00:00:00+00:00 until 2024-06-29 23:00:00+00:00!
 2024-07-01 19:54:19,448 INFO Saving Forecaster 0 to /home/runner/work/energy-demand-forecast/energy-demand-forecast/models/lgbm_forecaster_0.joblib.
+2024-07-01 22:17:24,717 INFO Making predictions using previous model...
+2024-07-01 22:17:24,717 INFO Making predictions with Forecaster 0
+2024-07-01 22:17:25,694 INFO MAPE between data and predicted: 1
+2024-07-01 22:17:25,694 INFO Saving Forecaster 0 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/lgbm_forecaster_0.joblib.
+2024-07-01 22:17:25,706 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:20:23,266 INFO Making predictions using previous model...
+2024-07-01 22:20:23,266 INFO Making predictions with Forecaster 0
+2024-07-01 22:20:24,126 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:20:24,127 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:20:46,064 INFO Making predictions using previous model...
+2024-07-01 22:20:46,064 INFO Making predictions with Forecaster 0
+2024-07-01 22:20:47,070 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:20:47,074 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:20:51,008 INFO Making predictions using previous model...
+2024-07-01 22:20:51,012 INFO Making predictions with Forecaster 0
+2024-07-01 22:20:51,882 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:20:51,882 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:20:52,892 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:20:52,994 INFO Making predictions using previous model...
+2024-07-01 22:20:53,000 INFO Making predictions with Forecaster 0
+2024-07-01 22:20:53,994 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:20:53,994 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:20:54,935 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:20:54,987 INFO Making predictions using previous model...
+2024-07-01 22:20:54,990 INFO Making predictions with Forecaster 0
+2024-07-01 22:20:56,206 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:20:56,207 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:20:57,033 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:20:57,126 INFO Making predictions using previous model...
+2024-07-01 22:20:57,126 INFO Making predictions with Forecaster 0
+2024-07-01 22:20:57,922 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:20:57,922 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:21:36,120 INFO Making predictions using previous model...
+2024-07-01 22:21:36,121 INFO Making predictions with Forecaster 0
+2024-07-01 22:21:37,509 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:21:37,509 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:21:38,737 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:21:38,865 INFO Making predictions using previous model...
+2024-07-01 22:21:38,866 INFO Making predictions with Forecaster 0
+2024-07-01 22:21:40,006 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:21:40,011 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:21:41,142 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:21:41,211 INFO Making predictions using previous model...
+2024-07-01 22:21:41,211 INFO Making predictions with Forecaster 0
+2024-07-01 22:21:42,548 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:21:42,548 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:21:43,546 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:22:01,233 INFO Making predictions using previous model...
+2024-07-01 22:22:01,233 INFO Making predictions with Forecaster 0
+2024-07-01 22:22:02,592 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:22:02,593 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:22:03,744 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:22:03,813 INFO Making predictions using previous model...
+2024-07-01 22:22:03,814 INFO Making predictions with Forecaster 0
+2024-07-01 22:22:04,725 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:22:04,727 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:22:05,700 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:22:05,778 INFO Making predictions using previous model...
+2024-07-01 22:22:05,778 INFO Making predictions with Forecaster 0
+2024-07-01 22:22:06,696 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:22:06,696 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:22:07,495 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:22:36,019 INFO Making predictions using previous model...
+2024-07-01 22:22:36,019 INFO Making predictions with Forecaster 0
+2024-07-01 22:22:37,936 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:22:37,937 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:22:39,294 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:29:46,655 INFO Making predictions using previous model...
+2024-07-01 22:29:46,655 INFO Making predictions with Forecaster 0
+2024-07-01 22:29:47,621 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:29:47,622 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:29:48,689 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:30:06,388 INFO Making predictions using previous model...
+2024-07-01 22:30:06,389 INFO Making predictions with Forecaster 0
+2024-07-01 22:30:07,693 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:30:07,693 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:30:08,826 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:31:20,303 INFO Making predictions using previous model...
+2024-07-01 22:31:20,303 INFO Making predictions with Forecaster 0
+2024-07-01 22:31:21,202 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:31:21,203 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:31:22,051 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:31:32,518 INFO Making predictions using previous model...
+2024-07-01 22:31:32,518 INFO Making predictions with Forecaster 0
+2024-07-01 22:31:33,400 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:31:33,400 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:31:34,218 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:31:46,966 INFO Making predictions using previous model...
+2024-07-01 22:31:46,967 INFO Making predictions with Forecaster 0
+2024-07-01 22:31:47,829 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:31:47,832 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:31:48,657 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:32:38,299 INFO Making predictions using previous model...
+2024-07-01 22:32:38,300 INFO Making predictions with Forecaster 0
+2024-07-01 22:32:39,723 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:32:39,723 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:32:41,227 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:33:02,056 INFO Making predictions using previous model...
+2024-07-01 22:33:02,057 INFO Making predictions using previous model...
+2024-07-01 22:33:02,057 INFO Making predictions with Forecaster 0
+2024-07-01 22:33:02,057 INFO Making predictions with Forecaster 0
+2024-07-01 22:33:04,035 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:33:04,038 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:33:04,062 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:33:04,074 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:33:06,181 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:33:06,190 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:33:33,868 INFO Making predictions using previous model...
+2024-07-01 22:33:33,868 INFO Making predictions with Forecaster 0
+2024-07-01 22:33:34,665 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:33:34,667 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:33:35,523 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:33:36,452 INFO Making predictions using previous model...
+2024-07-01 22:33:36,469 INFO Making predictions with Forecaster 0
+2024-07-01 22:33:37,494 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:33:37,495 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:33:38,348 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:33:54,659 INFO Making predictions using previous model...
+2024-07-01 22:33:54,660 INFO Making predictions with Forecaster 0
+2024-07-01 22:33:56,114 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:33:56,115 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:33:57,623 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:35:14,869 INFO Making predictions using previous model...
+2024-07-01 22:35:14,870 INFO Making predictions with Forecaster 0
+2024-07-01 22:35:14,871 INFO Making predictions using previous model...
+2024-07-01 22:35:14,872 INFO Making predictions with Forecaster 0
+2024-07-01 22:35:14,872 INFO Making predictions using previous model...
+2024-07-01 22:35:14,873 INFO Making predictions using previous model...
+2024-07-01 22:35:14,873 INFO Making predictions with Forecaster 0
+2024-07-01 22:35:14,873 INFO Making predictions with Forecaster 0
+2024-07-01 22:35:14,874 INFO Making predictions using previous model...
+2024-07-01 22:35:14,877 INFO Making predictions with Forecaster 0
+2024-07-01 22:35:18,695 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:35:18,698 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:35:18,820 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:35:18,821 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:35:18,830 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:35:18,831 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:35:19,292 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:35:19,294 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:35:19,307 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:35:19,308 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:35:22,493 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:35:22,603 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:35:22,758 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:35:23,007 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:35:23,052 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:35:59,266 INFO Making predictions using previous model...
+2024-07-01 22:35:59,267 INFO Making predictions with Forecaster 0
+2024-07-01 22:36:00,845 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:36:00,846 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:36:02,528 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:36:15,393 INFO Making predictions using previous model...
+2024-07-01 22:36:15,397 INFO Making predictions with Forecaster 0
+2024-07-01 22:36:16,985 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:36:16,986 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:36:18,869 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:36:34,177 INFO Making predictions using previous model...
+2024-07-01 22:36:34,178 INFO Making predictions using previous model...
+2024-07-01 22:36:34,180 INFO Making predictions using previous model...
+2024-07-01 22:36:34,181 INFO Making predictions using previous model...
+2024-07-01 22:36:34,181 INFO Making predictions with Forecaster 0
+2024-07-01 22:36:34,181 INFO Making predictions with Forecaster 0
+2024-07-01 22:36:34,182 INFO Making predictions with Forecaster 0
+2024-07-01 22:36:34,182 INFO Making predictions with Forecaster 0
+2024-07-01 22:36:37,048 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:36:37,050 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:36:37,235 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:36:37,237 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:36:37,481 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:36:37,483 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:36:37,524 INFO MAPE between data and predicted: 0.040493448015016545
+2024-07-01 22:36:37,527 INFO Obtaining training estimation with Forecaster 0
+2024-07-01 22:36:40,445 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:36:40,475 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:36:40,638 INFO Backtesting on training data with MAPE 0.03!
+2024-07-01 22:36:40,745 INFO Backtesting on training data with MAPE 0.03!

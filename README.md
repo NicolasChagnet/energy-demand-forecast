@@ -4,7 +4,7 @@
 
 ## Project Intro/Objective
 The goal of this project is to build, train and tune a prediction model for timeseries and then use it to forecast data.
-
+A demo is available on [Streamlit](https://energy-demand-forecast-france.streamlit.app/).
 <!--
 ### Collaborators
 |Name     |  Github Page   |  Personal Website  |
@@ -29,8 +29,8 @@ The goal of this project is to build, train and tune a prediction model for time
 ## Project Description
 In this project, I have built a forecasting model for regularly updated energy load data for France. In this [notebook](notebooks/0_exploratory_data_analysis.ipynb), I analyze the data of total energy load for France from 2019 up to 2024, and build a proof of concept for the various features required for the forecast, and compare models between the Random Forest and LightGBM. I found the LightGBM to be more performant in terms of Mean Absolute Percentage Error and in terms of training time.
 
-I then built an automatized interface for downloading new data, training the model and eventually making new predictions. 
-<!--A live demo is available at-->
+I then built an automatized interface for downloading new data, training the model and eventually making new predictions. The training is made on all the data up to some cutoff (usually set about one day before the new data) and the model is retrained weekly.
+A live demo is available on [Streamlit](https://energy-demand-forecast-france.streamlit.app/).
 
 
 ## Getting Started
@@ -38,7 +38,7 @@ I then built an automatized interface for downloading new data, training the mod
 1. Clone this repository.
 2. Raw data is being kept [here](data/raw) within this repo.
 3. Data processing/transformation scripts are being kept [here](src/).
-4. Exploratory data analysis can be found in a Jupyter notebook [here](notebooks/0_Exploratory_Data_Analysis.ipynb).
+4. Exploratory data analysis can be found in a Jupyter notebook [here](notebooks/0_exploratory_data_analysis.ipynb).
 
 Here is how to run the interface
 ```bash
@@ -56,4 +56,4 @@ options:
 
 ## Featured Notebooks/Analysis/Deliverables
 * [Proof of concept](notebooks/0_exploratory_data_analysis.ipynb)
-<!-- * [Streamlit Demo](#) -->
+* [Streamlit Demo](https://energy-demand-forecast-france.streamlit.app/)

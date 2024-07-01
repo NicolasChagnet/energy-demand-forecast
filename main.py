@@ -26,7 +26,16 @@ def get_model_prediction(can_train_new=False):
     else:
         logger.info("Making predictions using previous model...")
         model = old_model
-    return model.predict(), model.latest_mape
+    y_future, y_future_pred = model.predict()
+    mape_train, (y_train, y_train_pred) = model.get_training()
+    return {
+        "future_actual": y_future,
+        "future_pred": y_future_pred,
+        "train_actual": y_train,
+        "train_pred": y_train_pred,
+        "mape_future": model.latest_mape,
+        "mape_train": mape_train,
+    }
 
 
 def train_new_model():

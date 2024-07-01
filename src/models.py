@@ -8,6 +8,7 @@ import joblib
 import pandas as pd
 import glob
 import re
+import numpy as np
 from src.logger import logger
 
 
@@ -119,7 +120,7 @@ class ForecasterLGBM:
             self.tune()
         # Load the data
         X, y = data.load_all_data()
-        idx_train, idx_train_noval, idx_future = self.make_idxs()
+        idx_train, _, idx_future = self.make_idxs()
         n_steps = len(idx_future)
         if n_steps > config.refit_size * config.predict_size:
             logger.warn(f"Predicting {n_steps} hours (about {n_steps // 24} days), retraining might be necessary!")
@@ -129,7 +130,21 @@ class ForecasterLGBM:
         if self.latest_mape != mape:
             self.latest_mape = mape
             self.save_to_file()
-        return y.loc[idx_future], y_predicted
+        return (y.loc[idx_future], y_predicted)
+
+    def get_training(self):
+        logger.info(f"Obtaining training estimation with Forecaster {self.iteration}")
+        if not self.is_tuned:
+            logger.info(f"Forecaster {self.iteration} not tuned!")
+            self.tune()
+        # Load the data
+        X, y = data.load_all_data()
+        idx_train, _, idx_future = self.make_idxs()
+        X_train, y_train = self.forecaster.create_train_X_y(y=y.loc[idx_train], exog=X.loc[idx_train])
+        y_train_pred = pd.Series(self.forecaster.regressor.predict(X_train), index=y_train.index)
+        mape_train = mean_absolute_percentage_error(y_train, y_train_pred)
+        logger.info(f"Backtesting on training data with MAPE {np.round(mape_train,2)}!")
+        return mape_train, (y_train, y_train_pred)
 
     def get_end_training(self):
         return self.end_train
