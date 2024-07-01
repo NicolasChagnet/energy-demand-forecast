@@ -1,0 +1,13 @@
+holidays==0.51
+joblib==1.4.2
+lightgbm==4.4.0
+numpy==1.26.4
+pandas==2.2.2
+pyprojroot==0.3.0
+python-dotenv==1.0.1
+Requests==2.32.3
+scikit_learn==1.4.2
+scipy==1.13.1
+skforecast==0.12.1
+statsmodels==0.14.2
+xmltodict==0.13.0
