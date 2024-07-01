@@ -6,53 +6,104 @@
 #
 alembic==1.13.2
     # via optuna
+altair==5.3.0
+    # via streamlit
+attrs==23.2.0
+    # via
+    #   jsonschema
+    #   referencing
+blinker==1.8.2
+    # via streamlit
+cachetools==5.3.3
+    # via streamlit
 certifi==2024.6.2
     # via requests
 charset-normalizer==3.3.2
     # via requests
+click==8.1.7
+    # via streamlit
 colorlog==6.8.2
     # via optuna
+gitdb==4.0.11
+    # via gitpython
+gitpython==3.1.43
+    # via streamlit
 greenlet==3.0.3
     # via sqlalchemy
 holidays==0.51
     # via -r requirements.in
 idna==3.7
     # via requests
+jinja2==3.1.4
+    # via
+    #   altair
+    #   pydeck
 joblib==1.4.2
     # via
     #   -r requirements.in
     #   scikit-learn
     #   skforecast
+jsonschema==4.22.0
+    # via altair
+jsonschema-specifications==2023.12.1
+    # via jsonschema
 lightgbm==4.4.0
     # via -r requirements.in
 mako==1.3.5
     # via alembic
+markdown-it-py==3.0.0
+    # via rich
 markupsafe==2.1.5
-    # via mako
+    # via
+    #   jinja2
+    #   mako
+mdurl==0.1.2
+    # via markdown-it-py
 numpy==1.26.4
     # via
     #   -r requirements.in
+    #   altair
     #   lightgbm
     #   optuna
     #   pandas
     #   patsy
+    #   pyarrow
+    #   pydeck
     #   scikit-learn
     #   scipy
     #   skforecast
     #   statsmodels
+    #   streamlit
 optuna==3.6.1
     # via skforecast
 packaging==24.1
     # via
+    #   altair
     #   optuna
+    #   plotly
     #   statsmodels
+    #   streamlit
 pandas==2.2.2
     # via
     #   -r requirements.in
+    #   altair
     #   skforecast
     #   statsmodels
+    #   streamlit
 patsy==0.5.6
     # via statsmodels
+pillow==10.4.0
+    # via streamlit
+plotly==5.22.0
+    # via -r requirements.in
+protobuf==5.27.2
+    # via streamlit
+pyarrow==16.1.0
+    # via streamlit
+pydeck==0.9.1
+    # via streamlit
+pygments==2.18.0
+    # via rich
 pyprojroot==0.3.0
     # via -r requirements.in
 python-dateutil==2.9.0.post0
@@ -65,8 +116,20 @@ pytz==2024.1
     # via pandas
 pyyaml==6.0.1
     # via optuna
+referencing==0.35.1
+    # via
+    #   jsonschema
+    #   jsonschema-specifications
 requests==2.32.3
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   streamlit
+rich==13.7.1
+    # via streamlit
+rpds-py==0.18.1
+    # via
+    #   jsonschema
+    #   referencing
 scikit-learn==1.4.2
     # via
     #   -r requirements.in
@@ -83,14 +146,28 @@ six==1.16.0
     #   python-dateutil
 skforecast==0.12.1
     # via -r requirements.in
+smmap==5.0.1
+    # via gitdb
 sqlalchemy==2.0.31
     # via
     #   alembic
     #   optuna
 statsmodels==0.14.2
     # via -r requirements.in
+streamlit==1.36.0
+    # via -r requirements.in
+tenacity==8.4.2
+    # via
+    #   plotly
+    #   streamlit
 threadpoolctl==3.5.0
     # via scikit-learn
+toml==0.10.2
+    # via streamlit
+toolz==0.12.1
+    # via altair
+tornado==6.4.1
+    # via streamlit
 tqdm==4.66.4
     # via
     #   optuna
@@ -100,9 +177,12 @@ typing-extensions==4.12.2
     #   alembic
     #   pyprojroot
     #   sqlalchemy
+    #   streamlit
 tzdata==2024.1
     # via pandas
 urllib3==2.2.2
     # via requests
+watchdog==4.0.1
+    # via streamlit
 xmltodict==0.13.0
     # via -r requirements.in
