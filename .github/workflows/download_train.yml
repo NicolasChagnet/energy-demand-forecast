@@ -37,5 +37,5 @@ jobs:
             - name: Commit and push if changes
               if: env.changes == 'true' # if changes made push new data to repo
               run: |
-                git commit -m "updated video index"
+                git commit -m "downloaded new data and trained model"
                 git push
