@@ -11,7 +11,7 @@ A demo is available on [Streamlit](https://energy-demand-forecast-france.streaml
 |---------|-----------------|--------------------|
 |Nicolas Chagnet | [NicolasChagnet](https://github.com/NicolasChagnet)| [nicolaschagnet.github.io](https://nicolaschagnet.github.io)  | -->
 
-![plot_demo.png](plot_demo.png)
+![plot_demo.png](figs/plot_demo.png)
 
 ### Data sources
 
