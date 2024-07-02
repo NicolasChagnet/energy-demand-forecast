@@ -3,6 +3,7 @@ from src.logger import logger
 import datetime
 from dotenv import dotenv_values
 import argparse
+import pandas as pd
 
 
 def download_new_data(API_KEY):
@@ -44,7 +45,11 @@ def train_new_model(force=False):
     today = datetime.datetime.now(tz=datetime.UTC)
     more_week = ((today - latest_idx).total_seconds() // 3600) >= 24 * 7
     if (n_iteration < 0 or old_model is None or old_model.latest_mape > config.cutoff_mape) or force or more_week:
-        end_train_cutoff = latest_idx - datetime.timedelta(days=1) if n_iteration >= 0 else config.end_train_default
+        end_train_cutoff = (
+            latest_idx - datetime.timedelta(days=1)
+            if n_iteration >= 0
+            else pd.to_datetime(config.end_train_default, utc=True)
+        )
         model = models.ForecasterLGBM(n_iteration + 1, end_train=end_train_cutoff)
         model.tune()
 
