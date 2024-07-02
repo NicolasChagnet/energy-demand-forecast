@@ -102,8 +102,6 @@ def download_data(start, end, API_KEY):
         bool: Success of the operation
     """
     logger.info("Download in progres...")
-    print(start)
-    print(end)
     format_date = "%Y%m%d%H00"
     format_csv = "%d.%m.%Y %H:%M"
     # convert to UTC and then string for actual
@@ -121,7 +119,6 @@ def download_data(start, end, API_KEY):
     response_actual = requests.get(query)
     try:
         content = xmltodict.parse(response_actual.content)
-        print(content["GL_MarketDocument"]["TimeSeries"]["Period"])
         timeinterval_s = pd.to_datetime(
             content["GL_MarketDocument"]["TimeSeries"]["Period"]["timeInterval"]["start"], utc=True
         )
