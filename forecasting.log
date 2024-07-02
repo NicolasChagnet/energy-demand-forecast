@@ -217,3 +217,4 @@ reg_alpha                                                                  0.094
 Name: 9, dtype: object
 2024-07-02 17:50:47,408 INFO Model trained with data from 2019-01-01 00:00:00+00:00 until 2024-07-01 16:00:00+00:00!
 2024-07-02 17:50:47,408 INFO Saving Forecaster 1 to /home/runner/work/energy-demand-forecast/energy-demand-forecast/models/lgbm_forecaster_1.joblib.
+2024-07-02 20:06:55,489 ERROR No model found, train a model first!
