@@ -46,7 +46,7 @@ A live demo is available on [Streamlit](https://energy-demand-forecast-france.st
 
 Here is how to run the interface
 ```bash
-usage: main.py [-h] [-d] [-p] [-t]
+usage: main.py [-h] [-d] [-p] [-t] [--force]
 
 Prediction of energy demand in France
 
@@ -55,6 +55,7 @@ options:
   -d, --download  Download new data
   -p, --predict   Predict data
   -t, --train     Train and tune a new model
+  --force         Force training of new model
 ```
 
 

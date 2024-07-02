@@ -18,7 +18,7 @@ path_models = root_folder / "models"
 
 
 random_state = 314159  # Random state for reproducibility
-cutoff_mape = 0.2
+cutoff_mape = 0.1
 format_date = "%d.%m.%Y %H:%M"
 
 # Training and testing parameters
@@ -27,7 +27,7 @@ refit_size = 7
 delta_forecast = pd.Timedelta(hours=predict_size)
 delta_val = pd.Timedelta(hours=predict_size * refit_size * 2)
 start_train = "2019-01-01 00:00+00:00"
-end_train_default = "2024-06-20 00:00+00:00"
+end_train_default = "2024-06-25 00:00+00:00"
 
 # Periods for cyclical features (in hours)
 max_periods_manual = [12, 24, 24 * 3, 24 * 7, 24 * 30 * 6, 24 * 365]

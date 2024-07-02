@@ -18,14 +18,12 @@ def download_new_data(API_KEY):
     _ = data.build_final_files()
 
 
-def get_model_prediction(can_train_new=False):
-    n_iteration, old_model = models.get_last_model()
-    if (n_iteration < 0 or old_model is None or old_model.latest_mape > config.cutoff_mape) and can_train_new:
-        logger.info("Making predictions using new model...")
-        train_new_model()
-    else:
-        logger.info("Making predictions using previous model...")
-        model = old_model
+def get_model_prediction():
+    n_iteration, model = models.get_last_model()
+    if n_iteration < 0 or model is None:
+        logger.error("No model found, train a model first!")
+        return None
+    logger.info("Making predictions using previous model...")
     y_future, y_future_pred = model.predict()
     mape_train, (y_train, y_train_pred) = model.get_training()
     return {
@@ -38,13 +36,17 @@ def get_model_prediction(can_train_new=False):
     }
 
 
-def train_new_model():
+def train_new_model(force=False):
     logger.info("Training new model...")
-    n_iteration, _ = models.get_last_model()
+    n_iteration, old_model = models.get_last_model()
     current_data = data.load_energy()
     latest_idx = current_data.index[-1]
-    model = models.ForecasterLGBM(n_iteration + 1, end_train=latest_idx - datetime.timedelta(days=1))
-    model.tune()
+    today = datetime.datetime.now(tz=datetime.UTC)
+    more_week = ((today - latest_idx).total_seconds() // 3600) >= 24 * 7
+    if (n_iteration < 0 or old_model is None or old_model.latest_mape > config.cutoff_mape) or force or more_week:
+        end_train_cutoff = latest_idx - datetime.timedelta(days=1) if n_iteration >= 0 else config.end_train_default
+        model = models.ForecasterLGBM(n_iteration + 1, end_train=end_train_cutoff
+        model.tune()
 
 
 parser = argparse.ArgumentParser(description="Prediction of energy demand in France")
@@ -69,6 +71,12 @@ parser.add_argument(
     dest="train",
     help="Train and tune a new model",
 )
+parser.add_argument(
+    "--force",
+    action="store_true",
+    dest="force",
+    help="Force training of new model",
+)
 
 if __name__ == "__main__":
     dict_env = dotenv_values()
@@ -76,7 +84,7 @@ if __name__ == "__main__":
     if args.download:
         download_new_data(dict_env["API_KEY"])
     if args.train and not args.predict:
-        train_new_model()
+        train_new_model(force=args.force)
     if args.predict:
-        (y, y_pred), mape = get_model_prediction(can_train_new=args.train)
+        (y, y_pred), mape = get_model_prediction()
         print(f"Forecast with MAPE {mape}!")
