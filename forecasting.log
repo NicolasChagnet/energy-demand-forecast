@@ -197,3 +197,23 @@ Name: 9, dtype: object
 2024-07-01 22:44:49,558 INFO MAPE between data and predicted: 0.040493448015016545
 2024-07-01 22:44:49,565 INFO Obtaining training estimation with Forecaster 0
 2024-07-01 22:44:51,193 INFO Backtesting on training data with MAPE 0.03!
+2024-07-02 17:50:04,182 INFO Downloading new data...
+2024-07-02 17:50:04,255 INFO Download in progres...
+2024-07-02 17:50:05,225 INFO Saving data from 202407010000 until 202407021600 to file!
+2024-07-02 17:50:05,227 INFO Merging raw files...
+2024-07-02 17:50:05,670 INFO Building final training and exogeneous files...
+2024-07-02 17:50:09,163 INFO Training new model...
+2024-07-02 17:50:09,248 INFO Initializing LGBM Forecaster 1
+2024-07-02 17:50:09,248 INFO Tuning Forecaster 1
+2024-07-02 17:50:47,407 INFO Tuning results: 
+2024-07-02 17:50:47,408 INFO Best parameters: lags                                                                   [4, 6, 7, 8]
+params                            {'num_leaves': 37, 'max_depth': 15, 'learning_...
+mean_absolute_percentage_error                                             0.031284
+num_leaves                                                                     37.0
+max_depth                                                                      15.0
+learning_rate                                                              0.013531
+n_estimators                                                                  278.0
+reg_alpha                                                                  0.094817
+Name: 9, dtype: object
+2024-07-02 17:50:47,408 INFO Model trained with data from 2019-01-01 00:00:00+00:00 until 2024-07-01 16:00:00+00:00!
+2024-07-02 17:50:47,408 INFO Saving Forecaster 1 to /home/runner/work/energy-demand-forecast/energy-demand-forecast/models/lgbm_forecaster_1.joblib.
