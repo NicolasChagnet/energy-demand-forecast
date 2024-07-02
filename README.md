@@ -35,6 +35,7 @@ In this project, I have built a forecasting model for regularly updated energy l
 I then built an automatized interface for downloading new data, training the model and eventually making new predictions. The training is made on all the data up to some cutoff (usually set about one day before the new data) and the model is retrained weekly.
 A live demo is available on [Streamlit](https://energy-demand-forecast-france.streamlit.app/).
 
+![diagram.png](figs/diagram.png)
 
 ## Getting Started
 
