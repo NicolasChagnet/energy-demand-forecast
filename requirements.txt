@@ -16,7 +16,7 @@ blinker==1.8.2
     # via streamlit
 cachetools==5.3.3
     # via streamlit
-certifi==2024.6.2
+certifi>=2024.07.04
     # via requests
 charset-normalizer==3.3.2
     # via requests
