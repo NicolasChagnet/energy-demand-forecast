@@ -54,7 +54,6 @@ class ForecasterLGBM:
         self.start_train = config.start_train
         self.end_train = end_train if end_train is not None else config.end_train
         self.is_tuned = False
-        self.latest_mape = 1
 
     def make_idxs(self):
         X, y = data.load_all_data()
@@ -127,10 +126,7 @@ class ForecasterLGBM:
         y_predicted = self.forecaster.predict(steps=n_steps, exog=X.loc[idx_future])
         mape = mean_absolute_percentage_error(y.loc[idx_future], y_predicted)
         logger.info(f"MAPE between data and predicted: {self.latest_mape}")
-        if self.latest_mape != mape:
-            self.latest_mape = mape
-            self.save_to_file()
-        return (y.loc[idx_future], y_predicted)
+        return mape, (y.loc[idx_future], y_predicted)
 
     def get_training(self):
         logger.info(f"Obtaining training estimation with Forecaster {self.iteration}")
@@ -139,7 +135,7 @@ class ForecasterLGBM:
             self.tune()
         # Load the data
         X, y = data.load_all_data()
-        idx_train, _, idx_future = self.make_idxs()
+        idx_train, _, _ = self.make_idxs()
         X_train, y_train = self.forecaster.create_train_X_y(y=y.loc[idx_train], exog=X.loc[idx_train])
         y_train_pred = pd.Series(self.forecaster.regressor.predict(X_train), index=y_train.index)
         mape_train = mean_absolute_percentage_error(y_train, y_train_pred)

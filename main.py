@@ -25,14 +25,14 @@ def get_model_prediction():
         logger.error("No model found, train a model first!")
         return None
     logger.info("Making predictions using previous model...")
-    y_future, y_future_pred = model.predict()
+    mape, (y_future, y_future_pred) = model.predict()
     mape_train, (y_train, y_train_pred) = model.get_training()
     return {
         "future_actual": y_future,
         "future_pred": y_future_pred,
         "train_actual": y_train,
         "train_pred": y_train_pred,
-        "mape_future": model.latest_mape,
+        "mape_future": mape,
         "mape_train": mape_train,
     }
 
@@ -44,7 +44,9 @@ def train_new_model(force=False):
     latest_idx = current_data.index[-1]
     today = datetime.datetime.now(tz=datetime.UTC)
     more_week = ((today - latest_idx).total_seconds() // 3600) >= 24 * 7
-    if (n_iteration < 0 or old_model is None or old_model.latest_mape > config.cutoff_mape) or force or more_week:
+
+    should_retrain = n_iteration < 0 or old_model is None or old_model.predict()[0] > config.cutoff_mape
+    if should_retrain or force or more_week:
         end_train_cutoff = (
             latest_idx - datetime.timedelta(days=1)
             if n_iteration >= 0
@@ -91,5 +93,5 @@ if __name__ == "__main__":
     if args.train and not args.predict:
         train_new_model(force=args.force)
     if args.predict:
-        (y, y_pred), mape = get_model_prediction()
-        print(f"Forecast with MAPE {mape}!")
+        out = get_model_prediction()
+        print(f"Forecast with MAPE {out['mape_future']}!")
