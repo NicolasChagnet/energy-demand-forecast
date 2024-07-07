@@ -1,4 +1,4 @@
-name: Download and Train
+name: Download and Train Model
 on:
     schedule:
         - cron: "0 0 * * MON"
