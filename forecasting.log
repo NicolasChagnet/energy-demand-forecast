@@ -265,3 +265,9 @@ Name: 9, dtype: object
 2024-07-07 12:19:31,251 INFO Making predictions with Forecaster 0
 2024-07-07 12:19:31,930 WARNING Predicting 298 hours (about 12 days), retraining might be necessary!
 2024-07-07 12:19:32,065 INFO MAPE between data and predicted: 1
+2024-07-08 00:39:09,120 INFO Downloading new data...
+2024-07-08 00:39:09,196 WARNING Last download less than 24h ago, aborting download...
+2024-07-08 00:39:10,216 INFO Training new model...
+2024-07-08 00:39:10,325 INFO Making predictions with Forecaster 0
+2024-07-08 00:39:10,998 WARNING Predicting 298 hours (about 12 days), retraining might be necessary!
+2024-07-08 00:39:11,135 INFO MAPE between data and predicted: 1
