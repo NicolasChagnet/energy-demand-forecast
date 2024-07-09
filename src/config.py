@@ -16,6 +16,9 @@ path_data_load = path_data_interim / "energy_load.csv"
 path_log = root_folder / "forecasting.log"
 path_models = root_folder / "models"
 
+path_html = root_folder / "output"
+path_template = path_html / "template.html"
+path_output_html = path_html / "index.html"
 
 random_state = 314159  # Random state for reproducibility
 cutoff_mape = 0.1
