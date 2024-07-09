@@ -33,7 +33,7 @@ A demo is available on [Streamlit](https://energy-demand-forecast-france.streaml
 In this project, I have built a forecasting model for regularly updated energy load data for France. In this [notebook](notebooks/0_exploratory_data_analysis.ipynb), I analyze the data of total energy load for France from 2019 up to 2024, and build a proof of concept for the various features required for the forecast, and compare models between the Random Forest and LightGBM. I found the LightGBM to be more performant in terms of Mean Absolute Percentage Error and in terms of training time.
 
 I then built an automatized interface for downloading new data, training the model and eventually making new predictions. The training is made on all the data up to some cutoff (usually set about one day before the new data) and the model is retrained weekly.
-A live demo is available on [Streamlit](https://energy-demand-forecast-france.streamlit.app/).
+A live demo is available using [Github Pages](https://nicolaschagnet.github.io/energy-demand-forecast/).
 
 ![diagram.png](figs/diagram.png)
 
@@ -61,4 +61,4 @@ options:
 
 ## Featured Notebooks/Analysis/Deliverables
 * [Proof of concept](notebooks/0_exploratory_data_analysis.ipynb)
-* [Streamlit Demo](https://energy-demand-forecast-france.streamlit.app/)
+* [Demo](https://nicolaschagnet.github.io/energy-demand-forecast/)
