@@ -28,7 +28,7 @@ jobs:
             - name: Run download
               run: python main.py -d
             - name: Run training
-              run: python main.py -t
+              run: python main.py -t --force
             - name: Make demo page
               run: python make_plot.py
             - name: Check for changes # create env variable indicating if any changes were made
