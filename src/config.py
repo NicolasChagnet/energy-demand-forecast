@@ -18,7 +18,7 @@ path_models = root_folder / "models"
 
 path_html = root_folder / "output"
 path_template = path_html / "template.html"
-path_output_html = path_html / "index.html"
+path_output_html = root_folder / "index.html"
 
 random_state = 314159  # Random state for reproducibility
 cutoff_mape = 0.1
