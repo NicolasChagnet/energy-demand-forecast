@@ -125,7 +125,7 @@ class ForecasterLGBM:
             logger.warn(f"Predicting {n_steps} hours (about {n_steps // 24} days), retraining might be necessary!")
         y_predicted = self.forecaster.predict(steps=n_steps, exog=X.loc[idx_future])
         mape = mean_absolute_percentage_error(y.loc[idx_future], y_predicted)
-        logger.info(f"MAPE between data and predicted: {self.latest_mape}")
+        logger.info(f"MAPE between data and predicted: {mape}")
         return mape, (y.loc[idx_future], y_predicted)
 
     def get_training(self):
