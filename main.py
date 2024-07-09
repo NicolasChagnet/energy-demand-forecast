@@ -47,6 +47,7 @@ def train_new_model(force=False):
 
     should_retrain = n_iteration < 0 or old_model is None or old_model.predict()[0] > config.cutoff_mape
     if should_retrain or force or more_week:
+        logger.info("Retraining needed!")
         end_train_cutoff = (
             latest_idx - datetime.timedelta(days=1)
             if n_iteration >= 0
