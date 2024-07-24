@@ -4,7 +4,7 @@
 
 ## Project Intro/Objective
 The goal of this project is to build, train and tune a prediction model for timeseries and then use it to forecast data.
-A demo is available on [Streamlit](https://energy-demand-forecast-france.streamlit.app/).
+A demo is available using [Github Pages](https://nicolaschagnet.github.io/energy-demand-forecast/).
 <!--
 ### Collaborators
 |Name     |  Github Page   |  Personal Website  |
