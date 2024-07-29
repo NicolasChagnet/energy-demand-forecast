@@ -10,7 +10,7 @@ def download_new_data(API_KEY):
     logger.info("Downloading new data...")
     current_data = data.load_energy()
     latest_idx = current_data.index[-1]
-    today = datetime.datetime.now(tz=datetime.UTC)
+    today = datetime.datetime.now(tz=datetime.timezone.utc)
     if ((today - latest_idx).total_seconds() // 3600) < 24:
         logger.warning("Last download less than 24h ago, aborting download...")
         return None
@@ -42,7 +42,7 @@ def train_new_model(force=False):
     n_iteration, old_model = models.get_last_model()
     current_data = data.load_energy()
     latest_idx = current_data.index[-1]
-    today = datetime.datetime.now(tz=datetime.UTC)
+    today = datetime.datetime.now(tz=datetime.timezone.utc)
     more_week = ((today - latest_idx).total_seconds() // 3600) >= 24 * 7
 
     should_retrain = n_iteration < 0 or old_model is None or old_model.predict()[0] > config.cutoff_mape

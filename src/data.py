@@ -119,15 +119,15 @@ def download_data(start, end, API_KEY):
     response_actual = requests.get(query)
     try:
         content = xmltodict.parse(response_actual.content)
-        timeinterval_s = pd.to_datetime(
-            content["GL_MarketDocument"]["TimeSeries"]["Period"]["timeInterval"]["start"], utc=True
-        )
-        timeinterval_e = pd.to_datetime(
-            content["GL_MarketDocument"]["TimeSeries"]["Period"]["timeInterval"]["end"], utc=True
-        ) - pd.Timedelta(hours=1)
+        if len(content["GL_MarketDocument"]["TimeSeries"]) == 1:
+            period = content["GL_MarketDocument"]["TimeSeries"]["Period"]
+        else:
+            period = content["GL_MarketDocument"]["TimeSeries"][0]["Period"]
+        timeinterval_s = pd.to_datetime(period["timeInterval"]["start"], utc=True)
+        timeinterval_e = pd.to_datetime(period["timeInterval"]["end"], utc=True) - pd.Timedelta(hours=1)
         start_str = timeinterval_s.strftime(format_date)
         end_str = timeinterval_e.strftime(format_date)
-        data_actual = content["GL_MarketDocument"]["TimeSeries"]["Period"]["Point"]
+        data_actual = period["Point"]
         data_actual = [x["quantity"] for x in data_actual]
 
         idx = pd.date_range(timeinterval_s, timeinterval_e, freq="h")
