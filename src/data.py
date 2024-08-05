@@ -55,11 +55,17 @@ def build_final_files():
     """Given an interim data file, builds a final training, exogeneous and reference prediction dataset."""
     logger.info("Building final training and exogeneous files...")
     # Load the data
-    energy_df = load_energy()
+    energy_df = load_energy().asfreq("h")
     # Interpolate the data
     energy_interpolated_df = preprocessing.LinearlyInterpolateTS(
-        cols=["load_actual", "load_forecast_day_ahead"], method="linear", limit_direction="forward"
+        cols=["load_actual", "load_forecast_day_ahead"],
+        method="linear",  # limit_direction="forward"
     ).fit_transform(energy_df)
+    # If there are still NaNs in the data (large gaps not taken into account by the interpolation)
+    # We just use a backfilling method
+    energy_interpolated_df["load_actual_interpolated"] = (
+        energy_interpolated_df["load_actual_interpolated"].astype("float").bfill()
+    )
     # Separate the data into different elements:
     # the training vector, the reference day-ahead prediction, the exogeneous predictors
     y = energy_interpolated_df["load_actual_interpolated"].asfreq("h")
@@ -119,10 +125,13 @@ def download_data(start, end, API_KEY):
     response_actual = requests.get(query)
     try:
         content = xmltodict.parse(response_actual.content)
-        if len(content["GL_MarketDocument"]["TimeSeries"]) == 1:
-            period = content["GL_MarketDocument"]["TimeSeries"]["Period"]
+        content_ts = content["GL_MarketDocument"]["TimeSeries"]
+        if type(content_ts) is dict:
+            period = content_ts["Period"]
+        elif type(content_ts) is list and len(content_ts) >= 1:
+            period = content_ts[0]["Period"]
         else:
-            period = content["GL_MarketDocument"]["TimeSeries"][0]["Period"]
+            raise ValueError("REST data not handled...")
         timeinterval_s = pd.to_datetime(period["timeInterval"]["start"], utc=True)
         timeinterval_e = pd.to_datetime(period["timeInterval"]["end"], utc=True) - pd.Timedelta(hours=1)
         start_str = timeinterval_s.strftime(format_date)

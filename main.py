@@ -6,12 +6,17 @@ import argparse
 import pandas as pd
 
 
-def download_new_data(API_KEY):
+def merge_build_manual():
+    _ = data.merge_raw_files()
+    _ = data.build_final_files()
+
+
+def download_new_data(API_KEY, force=False):
     logger.info("Downloading new data...")
     current_data = data.load_energy()
     latest_idx = current_data.index[-1]
     today = datetime.datetime.now(tz=datetime.timezone.utc)
-    if ((today - latest_idx).total_seconds() // 3600) < 24:
+    if ((today - latest_idx).total_seconds() // 3600) < 24 and not force:
         logger.warning("Last download less than 24h ago, aborting download...")
         return None
     _ = data.download_data(latest_idx + datetime.timedelta(hours=1), today, API_KEY)
@@ -85,14 +90,22 @@ parser.add_argument(
     dest="force",
     help="Force training of new model",
 )
+parser.add_argument(
+    "--merge",
+    action="store_true",
+    dest="merge",
+    help="Merge raw data into final build files",
+)
 
 if __name__ == "__main__":
     dict_env = dotenv_values()
     args = parser.parse_args()
     if args.download:
-        download_new_data(dict_env["API_KEY"])
+        download_new_data(dict_env["API_KEY"], force=args.force)
     if args.train and not args.predict:
         train_new_model(force=args.force)
     if args.predict:
         out = get_model_prediction()
         print(f"Forecast with MAPE {out['mape_future']}!")
+    if args.merge:
+        merge_build_manual()
