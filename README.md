@@ -28,6 +28,7 @@ A demo is available using [Github Pages](https://nicolaschagnet.github.io/energy
 ### Technologies
 * Python
 * Pandas, Scikit-learn, numpy
+* Skforecast
 
 ## Project Description
 In this project, I have built a forecasting model for regularly updated energy load data for France. In this [notebook](notebooks/0_exploratory_data_analysis.ipynb), I analyze the data of total energy load for France from 2019 up to 2024, and build a proof of concept for the various features required for the forecast, and compare models between the Random Forest and LightGBM. I found the LightGBM to be more performant in terms of Mean Absolute Percentage Error and in terms of training time.
