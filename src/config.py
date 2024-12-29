@@ -1,6 +1,7 @@
-import pandas as pd
 from itertools import combinations
 from pathlib import Path
+
+import pandas as pd
 from pyprojroot.here import (
     here,
 )  # This package is useful to track the root directory of the package

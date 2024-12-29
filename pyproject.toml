@@ -8,7 +8,7 @@ dependencies = [
     "holidays==0.51",
     "joblib==1.4.2",
     "lightgbm==4.4.0",
-    "numpy==1.26.4",
+    "numpy>2.0",
     "pandas==2.2.2",
     "plotly==5.22.0",
     "pyprojroot==0.3.0",
@@ -16,8 +16,8 @@ dependencies = [
     "Requests==2.32.3",
     "scikit_learn==1.4.2",
     "scipy==1.13.1",
-    "skforecast==0.12.1",
+    "skforecast>=0.14",
     "statsmodels==0.14.2",
     "streamlit==1.36.0",
     "xmltodict==0.13.0",
-    ]
+]

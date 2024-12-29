@@ -1,5 +1,5 @@
-from scipy.signal import periodogram
 import numpy as np
+from scipy.signal import periodogram
 from statsmodels.tsa.deterministic import CalendarFourier, DeterministicProcess, Fourier
 
 
