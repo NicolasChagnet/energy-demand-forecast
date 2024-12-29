@@ -14,7 +14,6 @@ def compute_periodogram(ts, max_peaks=5, scaling="spectrum"):
 
 
 def build_deterministic_process(ts, periods=[], fourier_order=3):
-
     fouriers = [Fourier(period=period, order=fourier_order) for period in periods]
 
     dp = DeterministicProcess(
