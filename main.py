@@ -82,13 +82,6 @@ parser = argparse.ArgumentParser(description="Prediction of energy demand in Fra
 subparsers = parser.add_subparsers(dest="subcommand")
 
 
-parser.add_argument(
-    "--force",
-    action="store_true",
-    dest="force",
-    help="Force training of new model",
-)
-
 # Download subcommand
 download_parser = subparsers.add_parser("download")
 download_parser.add_argument(
