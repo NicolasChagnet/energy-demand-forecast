@@ -33,11 +33,11 @@ jobs:
                 fail_on_empty: false
                 sort_keys: false
             - name: Run download
-              run: uv run main.py -d
+              run: uv run main.py download
             - name: Run training
-              run: uv run main.py -t --force
+              run: uv run main.py training --force
             - name: Make demo page
-              run: uv run make_plot.py
+              run: uv run main.py predict --plot
             - name: Check for changes # create env variable indicating if any changes were made
               id: git-check
               run: |
