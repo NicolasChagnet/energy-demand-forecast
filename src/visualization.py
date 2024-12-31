@@ -2,11 +2,10 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from matplotlib import pyplot as plt
-from scipy.signal import periodogram
 from statsmodels.tsa.stattools import adfuller
 
 
-def plot_distribution(series, ax=None):
+def plot_distribution(series: pd.Series, ax: plt.Axes | None = None) -> None:
     if ax is None:
         fig, ax = plt.subplots()
     if series.nunique() < 100:
@@ -15,7 +14,7 @@ def plot_distribution(series, ax=None):
         sns.kdeplot(series, ax=ax)
 
 
-def plot_distributions(df):
+def plot_distributions(df: pd.DataFrame) -> None:
     n_cols = 3
     cols = df.columns
     n_features = len(cols)
@@ -30,10 +29,17 @@ def plot_distributions(df):
         plot_distribution(df[cols[i]], ax=axs[pos_x, pos_y])
 
 
-def plot_series(series=pd.Series([]), label=None, ylabel=None, title=None, ax=None):
+def plot_series(
+    series: pd.Series | None = None,
+    label: str | None = None,
+    ylabel: str | None = None,
+    title: str | None = None,
+    ax: plt.Axes | None = None,
+) -> plt.Axes:
     """
     Plots a certain time-series with a 'label', 'ylabel', 'title', 'start' and 'end' of the plot.
     """
+    series = series or pd.Series([])
     sns.set_theme()
     if ax is None:
         fig, ax = plt.subplots(figsize=(30, 12))
@@ -52,7 +58,7 @@ def plot_series(series=pd.Series([]), label=None, ylabel=None, title=None, ax=No
     return ax
 
 
-def plot_periodogram(frequencies, spectrum, ax=None):
+def plot_periodogram(frequencies: list[int], spectrum: list[float], ax: plt.Axes | None = None) -> plt.Axes:
     if ax is None:
         _, ax = plt.subplots(figsize=(24, 12))
     ax.step(frequencies, spectrum, color="purple")
@@ -88,16 +94,16 @@ def plot_periodogram(frequencies, spectrum, ax=None):
 
 
 # Based off of https://www.kaggle.com/code/tanmay111999/avocado-price-forecast-arima-sarima-detailed#Time-Series-Analysis
-def test_stationarity(ts, window=12):
+def test_stationarity(ts: pd.Series, window: int = 12) -> None:
     # Determing rolling statistics
-    MA = ts.rolling(window=window).mean()
-    MSTD = ts.rolling(window=window).std()
+    # MA = ts.rolling(window=window).mean()
+    # MSTD = ts.rolling(window=window).std()
 
     # Plot rolling statistics:
     plt.figure(figsize=(15, 5))
-    orig = plt.plot(ts, color="blue", label="Original")
-    mean = plt.plot(MA, color="red", label="Rolling Mean")
-    std = plt.plot(MSTD, color="black", label="Rolling Std")
+    # orig = plt.plot(ts, color="blue", label="Original")
+    # mean = plt.plot(MA, color="red", label="Rolling Mean")
+    # std = plt.plot(MSTD, color="black", label="Rolling Std")
     plt.legend(loc="best")
     plt.title("Rolling Mean & Standard Deviation")
     plt.show(block=False)
@@ -107,5 +113,5 @@ def test_stationarity(ts, window=12):
     dftest = adfuller(ts, autolag="AIC")
     dfoutput = pd.Series(dftest[0:4], index=["Test Statistic", "p-value", "#Lags Used", "Number of Observations Used"])
     for key, value in dftest[4].items():
-        dfoutput["Critical Value (%s)" % key] = value
+        dfoutput[f"Critical Value ({key})"] = value
     print(dfoutput)
