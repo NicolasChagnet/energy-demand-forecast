@@ -35,8 +35,6 @@ The model is initially trained on historical data from 2020 until the end of 202
 The structure of the code can be symbolically represented through its classes and interfaces:
 
 ```mermaid
----
----
 classDiagram
     class PredictionFigure {
         - __init__(self, output_prediction) None
