@@ -43,8 +43,8 @@ jobs:
               run: uv run main.py download
 #              run: python main.py download
             - name: Run training
-              run: uv run main.py train --force
-#              run: python main.py train --force
+              run: uv run main.py train
+#              run: python main.py train
             - name: Make demo page
               run: uv run main.py predict --plot
 #              run: python main.py predict --plot
