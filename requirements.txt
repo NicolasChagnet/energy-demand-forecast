@@ -4,12 +4,16 @@ alembic==1.14.0
     # via optuna
 altair==5.5.0
     # via streamlit
+astral==3.2
+    # via energy-demand-forecast (pyproject.toml)
 asttokens==3.0.0
     # via stack-data
 attrs==24.3.0
     # via
     #   jsonschema
     #   referencing
+beautifulsoup4==4.12.3
+    # via entsoe-py
 blinker==1.9.0
     # via streamlit
 cachetools==5.5.0
@@ -32,6 +36,8 @@ debugpy==1.8.11
     # via ipykernel
 decorator==5.1.1
     # via ipython
+entsoe-py==0.6.16
+    # via energy-demand-forecast (pyproject.toml)
 executing==2.1.0
     # via stack-data
 fonttools==4.55.3
@@ -135,6 +141,7 @@ packaging==24.2
 pandas==2.2.2
     # via
     #   energy-demand-forecast (pyproject.toml)
+    #   entsoe-py
     #   scikit-lego
     #   seaborn
     #   skforecast
@@ -185,7 +192,9 @@ python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
     # via energy-demand-forecast (pyproject.toml)
 pytz==2024.2
-    # via pandas
+    # via
+    #   entsoe-py
+    #   pandas
 pyyaml==6.0.2
     # via optuna
 pyzmq==26.2.0
@@ -199,6 +208,7 @@ referencing==0.35.1
 requests==2.32.3
     # via
     #   energy-demand-forecast (pyproject.toml)
+    #   entsoe-py
     #   streamlit
 rich==13.9.4
     # via streamlit
@@ -230,6 +240,8 @@ sklego==0.0
     # via energy-demand-forecast (pyproject.toml)
 smmap==5.0.1
     # via gitdb
+soupsieve==2.6
+    # via beautifulsoup4
 sqlalchemy==2.0.36
     # via
     #   alembic
