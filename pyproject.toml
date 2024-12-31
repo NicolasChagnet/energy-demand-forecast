@@ -5,6 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = "==3.11.9"
 dependencies = [
+    "astral>=3.2",
+    "entsoe-py>=0.6.16",
     "holidays==0.51",
     "ipykernel>=6.29.5",
     "joblib==1.4.2",
