@@ -1,6 +1,6 @@
-from scipy.signal import periodogram
 import numpy as np
-from statsmodels.tsa.deterministic import CalendarFourier, DeterministicProcess, Fourier
+from scipy.signal import periodogram
+from statsmodels.tsa.deterministic import DeterministicProcess, Fourier
 
 
 def compute_periodogram(ts, max_peaks=5, scaling="spectrum"):
@@ -13,7 +13,8 @@ def compute_periodogram(ts, max_peaks=5, scaling="spectrum"):
     return frequencies, spectrum, 1.0 / frequencies[max_spectrum], spectrum[max_spectrum]
 
 
-def build_deterministic_process(ts, periods=[], fourier_order=3):
+def build_deterministic_process(ts, periods=None, fourier_order=3):
+    periods = periods or list()
     fouriers = [Fourier(period=period, order=fourier_order) for period in periods]
 
     dp = DeterministicProcess(

@@ -11,52 +11,120 @@ A demo is available using [Github Pages](https://nicolaschagnet.github.io/energy
 |---------|-----------------|--------------------|
 |Nicolas Chagnet | [NicolasChagnet](https://github.com/NicolasChagnet)| [nicolaschagnet.github.io](https://nicolaschagnet.github.io)  | -->
 
-![plot_demo.png](figs/plot_demo.png)
+![plot_demo.png](figs/plot_demo_2.png)
 
 ### Data sources
 
 * [France actual energy load](https://transparency.entsoe.eu/load-domain/r2/totalLoadR2/show?name=&defaultValue=false&viewType=GRAPH&areaType=CTA&atch=false&dateTime.dateTime=01.07.2024%2000:00|CET%7CDAYTIMERANGE&dateTime.endDateTime=01.07.2024%2000:00|CET%7CDAYTIMERANGE&biddingZone.values=CTY%7C10YFR-RTE------C!CTA%7C10YFR-RTE------C&dateTime.timezone=CET_CEST&dateTime.timezone_input=CET+(UTC+1)+/+CEST+(UTC+2))
 
-
-### Methods Used
-* Data Analysis
-* Machine Learning
-* Data Visualization
-* Predictive Modeling
-* API queries
+The data is sourced using the [Entsoe Python Client](https://github.com/EnergieID/entsoe-py).
 
 ### Technologies
-* Python
-* Pandas, Scikit-learn, numpy
-* Skforecast
+* Python (Pandas, Scikit-learn, numpy)
+* Skforecast (LGBM and XGBoost models)
+* Plotly for visualizations
 
 ## Project Description
-In this project, I have built a forecasting model for regularly updated energy load data for France. In this [notebook](notebooks/0_exploratory_data_analysis.ipynb), I analyze the data of total energy load for France from 2019 up to 2024, and build a proof of concept for the various features required for the forecast, and compare models between the Random Forest and LightGBM. I found the LightGBM to be more performant in terms of Mean Absolute Percentage Error and in terms of training time.
 
-I then built an automatized interface for downloading new data, training the model and eventually making new predictions. The training is made on all the data up to some cutoff (usually set about one day before the new data) and the model is retrained weekly.
-A live demo is available using [Github Pages](https://nicolaschagnet.github.io/energy-demand-forecast/).
+In this project, I have built a pipeline to download and process regularly updated data from [Entsoe](https://transparency.entsoe.eu/), a European platform promoting transparency of data regarding energy production.
+The package in this project can download data on the French energy grid (both actual system load and the one-day ahead forecast provided by Entsoe) to then train various models (LGBM mostly, XGBoost is also supported) using the [Skforecast](https://skforecast.org) library. These models predict new data and can be visually and quantitativel compared to the provided day-ahead forecast on the [generated figure](https://nicolaschagnet.github.io/energy-demand-forecast/).
 
-![diagram.png](figs/diagram.png)
+
+The model is initially trained on historical data from 2020 until the end of 2024, and is then re-trained every week using a new batch of data. The training also consists of tuning for hyperparameters using Bayesian search with a backtesting cross-validation setup. 
+
+The structure of the code can be symbolically represented through its classes and interfaces:
+
+```mermaid
+---
+---
+classDiagram
+    class PredictionFigure {
+        - __init__(self, output_prediction) None
+        + make_plot(self)
+        + write_to_file(self) None
+    }
+    namespace preprocessing {
+
+        class ExogBuilder {
+            - __init__(self, periods, country_code) None
+            - _get_time_columns(self, X) pd.DataFrame
+            + build(self, start_date, end_date) pd.DataFrame
+        }
+
+        class LinearlyInterpolateTS {
+            + apply(self, y) pd.Series
+        }
+    }
+    namespace models {
+
+
+        class ForecasterRecursiveModel {
+            + ForecasterRecursive forecaster
+            + str name
+            - __init__(self, iteration, end_dev) None
+            + save_to_file(self) None
+            - _build_cv_dev(self, train_size) TimeSeriesFold
+            - _build_cv_test(self, train_size) TimeSeriesFold
+            + fit_with_best(self) None
+            + tune(self) None
+            + backtest(self) None
+            + predict(self, delta_predict) tuple[dict, tuple[pd.Series, pd.Series]]
+            + get_training(self) tuple[dict, tuple[pd.Series, pd.Series]]
+            + get_error_forecast(self, delta_predict) tuple[dict, tuple[pd.Series, pd.Series]]
+            + package_prediction(self)
+            + get_feature_importance(self) pd.DataFrame | None
+        }
+
+        class ForecasterRecursiveLGBM {
+            - __init__(self, iteration, end_dev) None
+        }
+
+        class ForecasterRecursiveXGB {
+            - __init__(self, iteration, end_dev) None
+        }
+    }
+
+    ForecasterRecursiveLGBM --|> ForecasterRecursiveModel
+
+    ForecasterRecursiveXGB --|> ForecasterRecursiveModel
+
+
+   namespace main {
+       class download
+       class train
+       class predict { +plot }
+   }
+
+   class index["index.html"]
+   class EntsoePandasClient
+%%   note for EntsoePandasClient "External client connecting to Entsoe API"
+
+    predict --> PredictionFigure
+    PredictionFigure --> index
+    download --> EntsoePandasClient
+    train --> ForecasterRecursiveLGBM
+    ForecasterRecursiveModel -- ExogBuilder
+    ForecasterRecursiveModel -- LinearlyInterpolateTS
+```
 
 ## Getting Started
 
 1. Clone this repository.
-2. Raw data is being kept [here](data/raw) within this repo.
+2. The raw data is being kept [here](data/raw) within this repo.
 3. Data processing/transformation scripts are being kept [here](src/).
-4. Exploratory data analysis can be found in a Jupyter notebook [here](notebooks/0_exploratory_data_analysis.ipynb).
+4. Exploratory data analysis can be found in a Jupyter notebook [here](notebooks/0_exploratory_data_analysis.ipynb) (deprecated).
 
 Here is how to run the interface
 ```bash
-usage: main.py [-h] [-d] [-p] [-t] [--force]
+usage: main.py [-h] {download,predict,train,merge} ...
 
 Prediction of energy demand in France
 
+positional arguments:
+  {download,predict,train,merge}
+
 options:
-  -h, --help      show this help message and exit
-  -d, --download  Download new data
-  -p, --predict   Predict data
-  -t, --train     Train and tune a new model
-  --force         Force training of new model
+  -h, --help            show this help message and exit
 ```
 
 

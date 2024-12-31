@@ -1,111 +1,149 @@
-from src import config, data, models
-from src.logger import logger
-import datetime
-from dotenv import dotenv_values
 import argparse
+import logging
+import time
+from logging.handlers import RotatingFileHandler
+
 import pandas as pd
+from dotenv import dotenv_values
+
+from src import config, data, models
+from src.figure import PredictionFigure
+
+list_models = {"lgbm": models.ForecasterRecursiveLGBM, "xgb": models.ForecasterRecursiveXGB}
 
 
-def merge_build_manual():
-    _ = data.merge_raw_files()
-    _ = data.build_final_files()
+def merge_build_manual() -> None:
+    """Merge raw files together."""
+    data.merge_raw_files()
 
 
-def download_new_data(API_KEY, force=False):
+def download_new_data(api_key: str, start: str | None = None, end: str | None = None, force: bool = False) -> None:
+    """Download new data from the Entsoe API for a given period."""
+    data.merge_raw_files()
     logger.info("Downloading new data...")
-    current_data = data.load_energy()
-    latest_idx = current_data.index[-1]
-    today = datetime.datetime.now(tz=datetime.timezone.utc)
-    if ((today - latest_idx).total_seconds() // 3600) < 24 and not force:
-        logger.warning("Last download less than 24h ago, aborting download...")
+    if start is None:
+        current_data = data.load_full_data()
+        start_date = current_data.index[-1] + pd.Timedelta(hours=1)
+    else:
+        start_date = pd.to_datetime(start, format=config.FORMAT_DATE_API, utc=True)
+    if end is None:
+        end_date = pd.Timestamp.utcnow().floor("d")  # Defaults to today, rounded down to midnight
+    else:
+        end_date = pd.to_datetime(end, format=config.FORMAT_DATE_API, utc=True)
+    if ((end_date - start_date).total_seconds() // 3600) < 24 and not force:
+        logger.info("Last download less than 24h ago, aborting download...")
         return None
-    _ = data.download_data(latest_idx + datetime.timedelta(hours=1), today, API_KEY)
-    _ = data.merge_raw_files()
-    _ = data.build_final_files()
+
+    # Retry loop in case there is an error
+    retry_counter = 0
+    while retry_counter < 5:
+        status = data.download_data(api_key, start_date, end_date)
+        if status:
+            break
+        retry_counter += 1
+        time.sleep(5)
+    data.merge_raw_files()
 
 
-def get_model_prediction():
+def get_model_prediction() -> dict | None:
+    """Get the prediction from the latest model trained."""
     n_iteration, model = models.get_last_model()
     if n_iteration < 0 or model is None:
         logger.error("No model found, train a model first!")
         return None
     logger.info("Making predictions using previous model...")
-    mape, (y_future, y_future_pred) = model.predict()
-    mape_train, (y_train, y_train_pred) = model.get_training()
-    return {
-        "future_actual": y_future,
-        "future_pred": y_future_pred,
-        "train_actual": y_train,
-        "train_pred": y_train_pred,
-        "mape_future": mape,
-        "mape_train": mape_train,
-    }
+    return model.package_prediction()
 
 
-def train_new_model(force=False):
+def train_new_model(model: str | None = None, force: bool = False):
+    """Train a new model using the data stored."""
+    # Choosing the model
+    model = model or "lgbm"
+    model_class = list_models.get(model, "lgbm")
+
+    # Training the model
     logger.info("Training new model...")
     n_iteration, old_model = models.get_last_model()
-    current_data = data.load_energy()
+    current_data = data.load_full_data()
     latest_idx = current_data.index[-1]
-    today = datetime.datetime.now(tz=datetime.timezone.utc)
-    more_week = ((today - latest_idx).total_seconds() // 3600) >= 24 * 7
+    end_train_cutoff = latest_idx - pd.Timedelta(days=1)
+    model = model_class(n_iteration + 1, end_dev=end_train_cutoff)
+    model.tune()
 
-    should_retrain = n_iteration < 0 or old_model is None or old_model.predict()[0] > config.cutoff_mape
-    if should_retrain or force or more_week:
-        logger.info("Retraining needed!")
-        end_train_cutoff = (
-            latest_idx - datetime.timedelta(days=1)
-            if n_iteration >= 0
-            else pd.to_datetime(config.end_train_default, utc=True)
-        )
-        model = models.ForecasterLGBM(n_iteration + 1, end_train=end_train_cutoff)
-        model.tune()
+
+def make_plot(out_prediction: dict) -> None:
+    """Make a plot with the latest predictions."""
+    fig = PredictionFigure(out_prediction)
+    fig.make_plot()
+    fig.write_to_file()
 
 
 parser = argparse.ArgumentParser(description="Prediction of energy demand in France")
-parser.add_argument(
-    "-d",
-    "--download",
-    action="store_true",
-    dest="download",
-    help="Download new data",
-)
-parser.add_argument(
-    "-p",
-    "--predict",
-    action="store_true",
-    dest="predict",
-    help="Predict data",
-)
-parser.add_argument(
-    "-t",
-    "--train",
-    action="store_true",
-    dest="train",
-    help="Train and tune a new model",
-)
-parser.add_argument(
+subparsers = parser.add_subparsers(dest="subcommand")
+
+
+# Download subcommand
+download_parser = subparsers.add_parser("download")
+download_parser.add_argument(
     "--force",
     action="store_true",
     dest="force",
-    help="Force training of new model",
+    help="Force downloading of the data",
 )
-parser.add_argument(
-    "--merge",
+download_parser.add_argument(
+    "dates",
+    type=str,
+    nargs="*",
+    help="Start and end dates of the period to consider in the format YYYYMMDDHHmm. If no end date is provided, defaults to today. If no starting date is provided, defaults to the last recorded.",
+)
+# Prediction subcommand
+predict_parser = subparsers.add_parser("predict")
+# Training subcommand
+train_parser = subparsers.add_parser("train")
+train_parser.add_argument("model", type=str, nargs="?", help="Model to use: 'lgbm', 'xgb'")
+train_parser.add_argument(
+    "--force",
     action="store_true",
-    dest="merge",
-    help="Merge raw data into final build files",
+    dest="force",
+    help="Force re-training of the data",
 )
+merge_parser = subparsers.add_parser("merge")
+predict_parser.add_argument("--plot", action="store_true", dest="plot", help="Plot the prediction using the template.")
 
 if __name__ == "__main__":
+    stream_formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(stream_formatter)
+    stream_handler.setLevel(logging.DEBUG)
+
+    file_formatter = logging.Formatter("%(asctime)s %(levelname)s %(funcName)s(%(lineno)d) %(message)s")
+    file_handler = RotatingFileHandler(config.path_log, maxBytes=2_000)
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(file_formatter)
+
+    logger = logging.getLogger(config.logger_name)
+    logger.addHandler(stream_handler)
+    logger.addHandler(file_handler)
+    logger.setLevel(logging.DEBUG)
+
     dict_env = dotenv_values()
     args = parser.parse_args()
-    if args.download:
-        download_new_data(dict_env["API_KEY"], force=args.force)
-    if args.train and not args.predict:
-        train_new_model(force=args.force)
-    if args.predict:
+    if args.subcommand == "download":
+        API_KEY = dict_env.get("API_KEY", "MISSING") or "MISSING"
+        if len(args.dates) >= 2:
+            download_new_data(api_key=API_KEY, start=args.dates[0], end=args.dates[1], force=args.force)
+        elif len(args.dates) == 1:
+            download_new_data(api_key=API_KEY, start=args.dates[0], force=args.force)
+        else:
+            download_new_data(api_key=API_KEY, force=args.force)
+    if args.subcommand == "train":
+        train_new_model(model=args.model, force=args.force)
+    if args.subcommand == "predict":
         out = get_model_prediction()
-        print(f"Forecast with MAPE {out['mape_future']}!")
-    if args.merge:
+        if out is not None:
+            logger.info(f"Forecast with metrics {out['metrics_future']}!")
+            logger.info(f"Entsoe forecast with metrics {out['metrics_forecast']}!")
+            if args.plot:
+                make_plot(out)
+    if args.subcommand == "merge":
         merge_build_manual()

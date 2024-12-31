@@ -1,0 +1,637 @@
+2024-12-30 14:49:14,166 INFO get_model_prediction(62) Making predictions using previous model...
+2024-12-30 14:49:16,501 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.06777149413687754), 'mae': np.float64(3232.2256234791685)}!
+2024-12-30 14:50:07,480 INFO get_model_prediction(62) Making predictions using previous model...
+2024-12-30 14:50:09,769 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.06777149413687754), 'mae': np.float64(3232.2256234791685)}!
+2024-12-30 14:56:25,359 INFO get_model_prediction(62) Making predictions using previous model...
+2024-12-30 14:56:27,804 INFO <module>(149) Forecast with metrics {'mape': np.float64(0.06777149413687754), 'mae': np.float64(3232.2256234791685)}!
+2024-12-30 14:56:27,804 INFO <module>(150) Entsoe forecast with metrics {'mape': np.float64(0.01819591883972957), 'mae': np.float64(864.9882535460993)}!
+2024-12-30 15:03:04,937 INFO train_new_model(89) Training new model...
+2024-12-30 15:03:29,513 INFO train_new_model(89) Training new model...
+2024-12-30 15:04:40,177 INFO train_new_model(89) Training new model...
+2024-12-30 15:05:29,228 INFO train_new_model(89) Training new model...
+2024-12-30 15:05:40,777 INFO train_new_model(89) Training new model...
+2024-12-30 15:06:45,742 INFO get_model_prediction(67) Making predictions using previous model...
+2024-12-30 15:06:46,563 INFO <module>(159) Forecast with metrics {'mape': np.float64(0.028451285266694878), 'mae': np.float64(1724.5625)}!
+2024-12-30 15:06:46,564 INFO <module>(160) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 15:06:58,366 INFO get_model_prediction(67) Making predictions using previous model...
+2024-12-30 15:06:59,169 INFO <module>(159) Forecast with metrics {'mape': np.float64(0.028451285266694878), 'mae': np.float64(1724.5625)}!
+2024-12-30 15:06:59,169 INFO <module>(160) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 15:19:32,515 INFO train_new_model(89) Training new model...
+2024-12-30 15:20:01,989 INFO train_new_model(89) Training new model...
+2024-12-30 15:20:42,406 INFO train_new_model(89) Training new model...
+2024-12-30 15:21:10,523 INFO train_new_model(89) Training new model...
+2024-12-30 15:22:28,661 INFO get_model_prediction(67) Making predictions using previous model...
+2024-12-30 15:22:29,261 INFO <module>(159) Forecast with metrics {'mape': np.float64(0.05255527553084821), 'mae': np.float64(3277.6809895833335)}!
+2024-12-30 15:22:29,261 INFO <module>(160) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 15:23:58,722 INFO get_model_prediction(67) Making predictions using previous model...
+2024-12-30 15:23:59,438 INFO <module>(159) Forecast with metrics {'mape': np.float64(0.05255527553084821), 'mae': np.float64(3277.6809895833335)}!
+2024-12-30 15:23:59,438 INFO <module>(160) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 15:25:37,969 INFO train_new_model(89) Training new model...
+2024-12-30 15:26:15,729 INFO get_model_prediction(67) Making predictions using previous model...
+2024-12-30 15:26:18,160 INFO <module>(159) Forecast with metrics {'mape': np.float64(0.04390047045245877), 'mae': np.float64(2147.771655941703)}!
+2024-12-30 15:26:18,160 INFO <module>(160) Entsoe forecast with metrics {'mape': np.float64(0.01819591883972957), 'mae': np.float64(864.9882535460993)}!
+2024-12-30 15:26:31,948 INFO train_new_model(89) Training new model...
+2024-12-30 15:27:28,135 INFO get_model_prediction(67) Making predictions using previous model...
+2024-12-30 15:27:28,781 INFO <module>(159) Forecast with metrics {'mape': np.float64(0.06842343250426593), 'mae': np.float64(4256.9892578125)}!
+2024-12-30 15:27:28,781 INFO <module>(160) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 15:29:33,299 INFO get_model_prediction(67) Making predictions using previous model...
+2024-12-30 15:29:33,955 INFO <module>(159) Forecast with metrics {'mape': np.float64(0.06842343250426593), 'mae': np.float64(4256.9892578125)}!
+2024-12-30 15:29:33,955 INFO <module>(160) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 15:29:38,648 INFO train_new_model(89) Training new model...
+2024-12-30 15:30:50,096 INFO get_model_prediction(67) Making predictions using previous model...
+2024-12-30 15:30:50,822 INFO <module>(159) Forecast with metrics {'mape': np.float64(0.06842343250426593), 'mae': np.float64(4256.9892578125)}!
+2024-12-30 15:30:50,822 INFO <module>(160) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 15:37:45,814 INFO train_new_model(74) Training new model...
+2024-12-30 15:39:05,376 INFO train_new_model(74) Training new model...
+2024-12-30 15:39:52,282 INFO get_model_prediction(52) Making predictions using previous model...
+2024-12-30 15:39:52,922 INFO <module>(160) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 15:39:52,922 INFO <module>(161) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 15:40:00,422 INFO train_new_model(74) Training new model...
+2024-12-30 15:40:58,155 INFO get_model_prediction(52) Making predictions using previous model...
+2024-12-30 15:40:58,814 INFO <module>(160) Forecast with metrics {'mape': np.float64(0.06842343250426593), 'mae': np.float64(4256.9892578125)}!
+2024-12-30 15:40:58,814 INFO <module>(161) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 15:41:24,043 INFO get_model_prediction(52) Making predictions using previous model...
+2024-12-30 15:41:24,684 INFO <module>(160) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 15:41:24,684 INFO <module>(161) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:08:53,676 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:08:54,857 INFO <module>(206) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:08:54,857 INFO <module>(207) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:09:26,129 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:09:26,837 INFO <module>(207) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:09:26,837 INFO <module>(208) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:09:32,589 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:09:33,264 INFO <module>(207) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:09:33,264 INFO <module>(208) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:09:47,821 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:09:48,647 INFO <module>(205) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:09:48,647 INFO <module>(206) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:13:52,502 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:13:53,191 INFO <module>(205) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:13:53,191 INFO <module>(206) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:14:04,455 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:14:05,137 INFO <module>(205) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:14:05,137 INFO <module>(206) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:14:41,533 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:14:42,420 INFO <module>(205) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:14:42,420 INFO <module>(206) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:15:12,904 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:15:14,006 INFO <module>(205) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:15:14,006 INFO <module>(206) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:19:16,824 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:19:17,835 INFO <module>(216) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:19:17,835 INFO <module>(217) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:19:54,942 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:19:56,012 INFO <module>(216) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:19:56,013 INFO <module>(217) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:20:13,479 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:20:14,408 INFO <module>(216) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:20:14,408 INFO <module>(217) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:21:36,724 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:21:37,975 INFO <module>(217) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:21:37,976 INFO <module>(218) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:22:01,706 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:22:02,593 INFO <module>(217) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:22:02,593 INFO <module>(218) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:22:24,049 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:22:24,791 INFO <module>(217) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:22:24,791 INFO <module>(218) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:22:38,424 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:22:39,249 INFO <module>(217) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:22:39,249 INFO <module>(218) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:24:52,789 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:24:53,735 INFO <module>(219) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:24:53,736 INFO <module>(220) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:25:57,810 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:25:58,492 INFO <module>(218) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:25:58,493 INFO <module>(219) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:26:20,430 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:26:21,107 INFO <module>(218) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:26:21,107 INFO <module>(219) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:26:34,816 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:26:35,526 INFO <module>(218) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:26:35,526 INFO <module>(219) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:27:00,502 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:27:01,234 INFO <module>(219) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:27:01,234 INFO <module>(220) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:27:54,622 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:27:55,668 INFO <module>(220) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:27:55,668 INFO <module>(221) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:28:22,622 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:28:23,351 INFO <module>(220) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:28:23,351 INFO <module>(221) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:28:43,550 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:28:44,620 INFO <module>(220) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:28:44,620 INFO <module>(221) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:34:09,182 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:34:09,871 INFO <module>(220) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:34:09,871 INFO <module>(221) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:38:45,879 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:38:46,725 INFO <module>(232) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:38:46,726 INFO <module>(233) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:42:12,599 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:42:13,531 INFO <module>(218) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:42:13,531 INFO <module>(219) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:43:08,462 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:43:09,582 INFO <module>(218) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:43:09,582 INFO <module>(219) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:44:02,253 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:44:03,036 INFO <module>(218) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:44:03,036 INFO <module>(219) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:45:36,651 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:45:37,566 INFO <module>(218) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:45:37,566 INFO <module>(219) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:45:53,343 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:45:54,217 INFO <module>(218) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:45:54,217 INFO <module>(219) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:46:39,302 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 20:46:40,573 INFO <module>(218) Forecast with metrics {'mape': np.float64(0.04422876190003311), 'mae': np.float64(2768.882151859554)}!
+2024-12-30 20:46:40,573 INFO <module>(219) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 20:50:26,047 INFO train_new_model(76) Training new model...
+2024-12-30 20:50:26,195 INFO __init__(319) Initializing XGB Forecaster 1
+2024-12-30 20:50:26,205 INFO tune(181) Tuning XGB Forecaster 1
+2024-12-30 20:50:55,420 INFO tune(204) Tuning results: 
+2024-12-30 20:50:55,425 INFO tune(207) Best parameters: lags                                                                   [1, 2, 3, 4]
+params                            {'max_leaves': 87, 'max_depth': 8, 'learning_r...
+mean_absolute_error                                                     2125.548726
+mean_absolute_percentage_error                                             0.038636
+max_leaves                                                                     87.0
+max_depth                                                                       8.0
+learning_rate                                                              0.074794
+subsample                                                                  0.685578
+n_estimators                                                                  154.0
+alpha                                                                      0.337802
+lambda                                                                     0.246449
+name                                                                            xgb
+Name: 0, dtype: object
+2024-12-30 20:50:55,426 INFO fit_with_best(156) Fitting XGB Forecaster 1 for predictions
+2024-12-30 20:50:55,686 INFO fit_with_best(169) Setting parameters...
+2024-12-30 20:50:55,687 INFO fit_with_best(171) Setting lags...
+2024-12-30 20:50:55,687 INFO fit_with_best(175) Fitting over the whole training and dev sets...
+2024-12-30 20:50:56,372 INFO fit_with_best(177) Training done!
+2024-12-30 20:50:56,373 INFO tune(213) Model trained with data from 2020-01-01 00:00:00+00:00 until 2024-12-29 00:00:00+00:00!
+2024-12-30 20:50:56,373 INFO save_to_file(127) Saving XGB Forecaster 1 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/xgb_forecaster_1.joblib.
+2024-12-30 20:52:22,888 INFO train_new_model(76) Training new model...
+2024-12-30 20:52:25,852 INFO __init__(319) Initializing XGB Forecaster 2
+2024-12-30 20:52:25,853 INFO tune(181) Tuning XGB Forecaster 2
+2024-12-30 20:53:07,001 INFO tune(204) Tuning results: 
+2024-12-30 20:53:07,006 INFO tune(207) Best parameters:
+ lags                                                                   [1, 2, 3, 4]
+params                            {'max_leaves': 32, 'max_depth': 4, 'learning_r...
+mean_absolute_error                                                     2089.551783
+mean_absolute_percentage_error                                             0.038107
+max_leaves                                                                     32.0
+max_depth                                                                       4.0
+learning_rate                                                              0.164953
+subsample                                                                  0.869212
+n_estimators                                                                  411.0
+alpha                                                                      0.177318
+lambda                                                                     0.340316
+name                                                                            xgb
+Name: 0, dtype: object
+2024-12-30 20:53:07,006 INFO fit_with_best(156) Fitting XGB Forecaster 2 for predictions
+2024-12-30 20:53:07,344 INFO fit_with_best(169) Setting parameters...
+2024-12-30 20:53:07,345 INFO fit_with_best(171) Setting lags...
+2024-12-30 20:53:07,345 INFO fit_with_best(175) Fitting over the whole training and dev sets...
+2024-12-30 20:53:08,864 INFO fit_with_best(177) Training done!
+2024-12-30 20:53:08,864 INFO tune(213) Model trained with data from 2020-01-01 00:00:00+00:00 until 2024-12-29 00:00:00+00:00!
+2024-12-30 20:53:08,864 INFO save_to_file(127) Saving XGB Forecaster 2 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/xgb_forecaster_2.joblib.
+2024-12-30 20:56:19,861 INFO train_new_model(76) Training new model...
+2024-12-30 20:56:22,977 INFO __init__(321) Initializing XGB Forecaster 3
+2024-12-30 20:56:22,977 INFO tune(183) Tuning XGB Forecaster 3
+2024-12-30 20:58:15,491 INFO tune(206) Tuning results: 
+2024-12-30 20:58:15,494 INFO tune(209) Best parameters:
+ lags                              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14...
+params                            {'max_depth': 9, 'learning_rate': 0.0185342090...
+mean_absolute_error                                                     2047.301479
+mean_absolute_percentage_error                                             0.036614
+max_depth                                                                       9.0
+learning_rate                                                              0.018534
+subsample                                                                   0.76791
+colsample_bytree                                                           0.639477
+min_child_weight                                                                7.0
+n_estimators                                                                  600.0
+alpha                                                                      0.049103
+lambda                                                                      0.40093
+name                                                                            xgb
+Name: 0, dtype: object
+2024-12-30 20:58:15,495 INFO fit_with_best(158) Fitting XGB Forecaster 3 for predictions
+2024-12-30 20:58:15,721 INFO fit_with_best(171) Setting parameters...
+2024-12-30 20:58:15,722 INFO fit_with_best(173) Setting lags...
+2024-12-30 20:58:15,722 INFO fit_with_best(177) Fitting over the whole training and dev sets...
+2024-12-30 20:58:24,145 INFO fit_with_best(179) Training done!
+2024-12-30 20:58:24,145 INFO tune(215) Model trained with data from 2020-01-01 00:00:00+00:00 until 2024-12-29 00:00:00+00:00!
+2024-12-30 20:58:24,146 INFO save_to_file(129) Saving XGB Forecaster 3 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/xgb_forecaster_3.joblib.
+2024-12-30 21:00:19,706 INFO train_new_model(76) Training new model...
+2024-12-30 21:00:22,746 INFO __init__(312) Initializing LGBM Forecaster 4
+2024-12-30 21:00:22,747 INFO tune(184) Tuning LGBM Forecaster 4
+2024-12-30 21:01:11,873 INFO train_new_model(76) Training new model...
+2024-12-30 21:01:14,893 INFO __init__(313) Initializing LGBM Forecaster 4
+2024-12-30 21:01:14,894 INFO tune(185) Tuning LGBM Forecaster 4
+2024-12-30 21:02:27,388 INFO tune(208) Tuning results: 
+2024-12-30 21:02:27,389 INFO tune(211) Best parameters:
+ lags                                                       [1, 2, 3, 4, 5, 6, 7, 8]
+params                            {'num_leaves': 178, 'max_depth': 14, 'learning...
+mean_absolute_error                                                     1609.618946
+mean_absolute_percentage_error                                             0.029799
+num_leaves                                                                    178.0
+max_depth                                                                      14.0
+learning_rate                                                              0.028248
+n_estimators                                                                  422.0
+reg_alpha                                                                 39.709253
+reg_lambda                                                                71.669481
+name                                                                           lgbm
+Name: 0, dtype: object
+2024-12-30 21:02:27,390 INFO fit_with_best(160) Fitting LGBM Forecaster 4 for predictions
+2024-12-30 21:02:27,638 INFO fit_with_best(173) Setting parameters...
+2024-12-30 21:02:27,638 INFO fit_with_best(175) Setting lags...
+2024-12-30 21:02:27,638 INFO fit_with_best(179) Fitting over the whole training and dev sets...
+2024-12-30 21:02:32,592 INFO fit_with_best(181) Training done!
+2024-12-30 21:02:32,593 INFO tune(217) Model trained with data from 2020-01-01 00:00:00+00:00 until 2024-12-29 00:00:00+00:00!
+2024-12-30 21:02:32,593 INFO save_to_file(129) Saving LGBM Forecaster 4 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/lgbm_forecaster_4.joblib.
+2024-12-30 21:04:25,234 INFO get_model_prediction(54) Making predictions using previous model...
+2024-12-30 21:04:25,235 INFO predict(247) Making predictions with LGBM Forecaster 4
+2024-12-30 21:04:25,558 INFO predict(268) Comparison between data and predicted, MAPE: 0.03, MAE: 1591.07
+2024-12-30 21:04:25,560 INFO get_training(272) Obtaining training estimation with Forecaster 4
+2024-12-30 21:04:26,135 INFO get_training(290) Backtesting on training data with MAPE 0.01, MAE 335.92!
+2024-12-30 21:04:26,265 INFO <module>(218) Forecast with metrics {'mape': np.float64(0.025369641958332367), 'mae': np.float64(1591.0689010993635)}!
+2024-12-30 21:04:26,265 INFO <module>(219) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 21:09:54,843 INFO train_new_model(74) Training new model...
+2024-12-30 21:09:55,039 INFO __init__(321) Initializing LGBM Forecaster 5
+2024-12-30 21:09:55,050 INFO tune(185) Tuning LGBM Forecaster 5
+2024-12-30 21:30:33,454 INFO tune(208) Tuning results: 
+2024-12-30 21:30:33,455 INFO tune(211) Best parameters:
+ lags                                                                         [1, 2]
+params                            {'num_leaves': 28, 'max_depth': 6, 'learning_r...
+mean_absolute_error                                                      1688.12695
+mean_absolute_percentage_error                                             0.031284
+num_leaves                                                                     28.0
+max_depth                                                                       6.0
+learning_rate                                                              0.032933
+n_estimators                                                                  297.0
+reg_alpha                                                                 94.234552
+reg_lambda                                                                31.869553
+name                                                                           lgbm
+Name: 0, dtype: object
+2024-12-30 21:30:33,455 INFO fit_with_best(160) Fitting LGBM Forecaster 5 for predictions
+2024-12-30 21:30:33,697 INFO fit_with_best(173) Setting parameters...
+2024-12-30 21:30:33,699 INFO fit_with_best(175) Setting lags...
+2024-12-30 21:30:33,699 INFO fit_with_best(179) Fitting over the whole training and dev sets...
+2024-12-30 21:30:59,255 INFO fit_with_best(181) Training done!
+2024-12-30 21:30:59,255 INFO tune(217) Model trained with data from 2020-01-01 00:00:00+00:00 until 2024-12-29 00:00:00+00:00!
+2024-12-30 21:30:59,256 INFO save_to_file(130) Saving LGBM Forecaster 5 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/lgbm_forecaster_5.joblib.
+2024-12-30 21:31:30,014 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-30 21:31:30,014 INFO predict(248) Making predictions with LGBM Forecaster 5
+2024-12-30 21:31:30,345 INFO predict(269) Comparison between data and predicted, MAPE: 0.03, MAE: 1567.73
+2024-12-30 21:31:30,347 INFO get_training(273) Obtaining training estimation with Forecaster 5
+2024-12-30 21:32:55,372 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-30 21:32:55,373 INFO predict(248) Making predictions with LGBM Forecaster 5
+2024-12-30 21:32:55,685 INFO predict(269) Comparison between data and predicted, MAPE: 0.03, MAE: 1567.73
+2024-12-30 21:32:55,686 INFO get_training(273) Obtaining training estimation with Forecaster 5
+2024-12-30 21:34:05,289 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-30 21:34:05,289 INFO predict(248) Making predictions with LGBM Forecaster 5
+2024-12-30 21:34:05,289 INFO fit_with_best(161) Fitting LGBM Forecaster 5 for predictions
+2024-12-30 21:34:05,563 INFO fit_with_best(174) Setting parameters...
+2024-12-30 21:34:05,582 INFO fit_with_best(176) Setting lags...
+2024-12-30 21:34:05,583 INFO fit_with_best(180) Fitting over the whole training and dev sets...
+2024-12-30 21:34:22,417 INFO fit_with_best(182) Training done!
+2024-12-30 21:34:22,711 INFO predict(272) Comparison between data and predicted, MAPE: 0.03, MAE: 1567.73
+2024-12-30 21:34:22,711 INFO get_training(276) Obtaining training estimation with Forecaster 5
+2024-12-30 21:44:51,209 INFO train_new_model(61) Training new model...
+2024-12-30 21:44:51,270 INFO __init__(337) Initializing LGBM Forecaster 0
+2024-12-30 21:44:51,316 INFO tune(189) Tuning LGBM Forecaster 0
+2024-12-30 21:45:35,575 INFO tune(212) Tuning results: 
+2024-12-30 21:45:35,576 INFO tune(215) Best parameters:
+ lags                                                          [1, 2, 3, 4, 5, 6, 7]
+params                            {'num_leaves': 140, 'max_depth': 8, 'learning_...
+mean_absolute_error                                                     1565.730425
+mean_absolute_percentage_error                                             0.028934
+num_leaves                                                                    140.0
+max_depth                                                                       8.0
+learning_rate                                                              0.036778
+n_estimators                                                                  360.0
+reg_alpha                                                                  5.113195
+reg_lambda                                                                 4.955661
+name                                                                           lgbm
+Name: 0, dtype: object
+2024-12-30 21:45:35,576 INFO fit_with_best(164) Fitting LGBM Forecaster 0 for predictions
+2024-12-30 21:45:35,808 INFO fit_with_best(177) Setting parameters...
+2024-12-30 21:45:35,808 INFO fit_with_best(179) Setting lags...
+2024-12-30 21:45:35,809 INFO fit_with_best(183) Fitting over the whole training and dev sets...
+2024-12-30 21:45:37,903 INFO fit_with_best(185) Training done!
+2024-12-30 21:45:37,904 INFO tune(221) Model trained with data from 2020-01-01 00:00:00+00:00 until 2024-12-29 00:00:00+00:00!
+2024-12-30 21:45:37,904 INFO save_to_file(134) Saving LGBM Forecaster 0 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/lgbm_forecaster_0.joblib.
+2024-12-30 21:45:50,523 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-30 21:45:50,523 INFO predict(252) Making predictions with LGBM Forecaster 0
+2024-12-30 21:45:51,701 INFO predict(273) Comparison between data and predicted, MAPE: 0.04, MAE: 2206.18
+2024-12-30 21:45:51,702 INFO get_training(278) Obtaining training estimation with Forecaster 0
+2024-12-30 21:45:52,259 INFO get_training(296) Backtesting on training data with MAPE 0.01, MAE 322.40!
+2024-12-30 21:45:52,393 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.035132142647161906), 'mae': np.float64(2206.1831428970468)}!
+2024-12-30 21:45:52,394 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 21:46:12,137 INFO train_new_model(61) Training new model...
+2024-12-30 21:46:12,345 INFO __init__(345) Initializing XGB Forecaster 1
+2024-12-30 21:46:12,347 INFO tune(189) Tuning XGB Forecaster 1
+2024-12-30 21:48:25,697 INFO tune(212) Tuning results: 
+2024-12-30 21:48:25,700 INFO tune(215) Best parameters:
+ lags                              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14...
+params                            {'max_depth': 8, 'learning_rate': 0.0383790862...
+mean_absolute_error                                                     1986.883143
+mean_absolute_percentage_error                                             0.035814
+max_depth                                                                       8.0
+learning_rate                                                              0.038379
+subsample                                                                    0.8066
+colsample_bytree                                                           0.682272
+min_child_weight                                                                5.0
+n_estimators                                                                  300.0
+alpha                                                                      0.226146
+lambda                                                                     0.260404
+name                                                                            xgb
+Name: 0, dtype: object
+2024-12-30 21:48:25,700 INFO fit_with_best(164) Fitting XGB Forecaster 1 for predictions
+2024-12-30 21:48:25,921 INFO fit_with_best(177) Setting parameters...
+2024-12-30 21:48:25,922 INFO fit_with_best(179) Setting lags...
+2024-12-30 21:48:25,922 INFO fit_with_best(183) Fitting over the whole training and dev sets...
+2024-12-30 21:48:29,260 INFO fit_with_best(185) Training done!
+2024-12-30 21:48:29,260 INFO tune(221) Model trained with data from 2020-01-01 00:00:00+00:00 until 2024-12-29 00:00:00+00:00!
+2024-12-30 21:48:29,260 INFO save_to_file(134) Saving XGB Forecaster 1 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/xgb_forecaster_1.joblib.
+2024-12-30 21:48:56,236 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-30 21:48:56,237 INFO predict(252) Making predictions with XGB Forecaster 1
+2024-12-30 21:48:57,979 INFO predict(273) Comparison between data and predicted, MAPE: 0.06, MAE: 3908.09
+2024-12-30 21:48:57,980 INFO get_training(278) Obtaining training estimation with Forecaster 1
+2024-12-30 21:48:58,555 INFO get_training(296) Backtesting on training data with MAPE 0.01, MAE 316.79!
+2024-12-30 21:48:58,719 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.06320132713405495), 'mae': np.float64(3908.0924479166665)}!
+2024-12-30 21:48:58,719 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 21:50:52,652 INFO train_new_model(61) Training new model...
+2024-12-30 21:50:52,712 INFO __init__(342) Initializing LGBM Forecaster 0
+2024-12-30 21:50:52,755 INFO tune(189) Tuning LGBM Forecaster 0
+2024-12-30 21:51:53,337 INFO tune(212) Tuning results: 
+2024-12-30 21:51:53,338 INFO tune(215) Best parameters:
+ lags                                                          [1, 2, 3, 4, 5, 6, 7]
+params                            {'num_leaves': 140, 'max_depth': 8, 'learning_...
+mean_absolute_error                                                     1565.730425
+mean_absolute_percentage_error                                             0.028934
+num_leaves                                                                    140.0
+max_depth                                                                       8.0
+learning_rate                                                              0.036778
+n_estimators                                                                  360.0
+reg_alpha                                                                  5.113195
+reg_lambda                                                                 4.955661
+name                                                                           lgbm
+Name: 0, dtype: object
+2024-12-30 21:51:53,338 INFO fit_with_best(164) Fitting LGBM Forecaster 0 for predictions
+2024-12-30 21:51:53,573 INFO fit_with_best(177) Setting parameters...
+2024-12-30 21:51:53,573 INFO fit_with_best(179) Setting lags...
+2024-12-30 21:52:04,480 INFO train_new_model(61) Training new model...
+2024-12-30 21:52:04,559 INFO __init__(342) Initializing LGBM Forecaster 0
+2024-12-30 21:52:04,600 INFO tune(189) Tuning LGBM Forecaster 0
+2024-12-30 21:52:11,622 INFO train_new_model(61) Training new model...
+2024-12-30 21:52:11,697 INFO __init__(342) Initializing LGBM Forecaster 0
+2024-12-30 21:52:11,746 INFO tune(189) Tuning LGBM Forecaster 0
+2024-12-30 21:53:24,782 INFO tune(212) Tuning results: 
+2024-12-30 21:53:24,783 INFO tune(215) Best parameters:
+ lags                                                          [1, 2, 3, 4, 5, 6, 7]
+params                            {'num_leaves': 140, 'max_depth': 8, 'learning_...
+mean_absolute_error                                                     1565.730425
+mean_absolute_percentage_error                                             0.028934
+num_leaves                                                                    140.0
+max_depth                                                                       8.0
+learning_rate                                                              0.036778
+n_estimators                                                                  360.0
+reg_alpha                                                                  5.113195
+reg_lambda                                                                 4.955661
+name                                                                           lgbm
+Name: 0, dtype: object
+2024-12-30 21:53:24,784 INFO fit_with_best(164) Fitting LGBM Forecaster 0 for predictions
+2024-12-30 21:53:25,113 INFO fit_with_best(177) Setting parameters...
+2024-12-30 21:53:25,114 INFO fit_with_best(179) Setting lags...
+2024-12-30 21:53:25,114 INFO fit_with_best(183) Fitting over the whole training and dev sets 01.01.2020 00:00 - 29.12.2024 00:00 ...
+2024-12-30 21:53:31,775 INFO fit_with_best(185) Training done!
+2024-12-30 21:53:31,776 INFO tune(221) Model trained with data from 2020-01-01 00:00:00+00:00 until 2024-12-29 00:00:00+00:00!
+2024-12-30 21:53:31,776 INFO save_to_file(134) Saving LGBM Forecaster 0 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/lgbm_forecaster_0.joblib.
+2024-12-30 21:54:17,955 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-30 21:54:17,956 INFO predict(252) Making predictions with LGBM Forecaster 0
+2024-12-30 21:54:18,989 INFO predict(273) Comparison between data and predicted, MAPE: 0.04, MAE: 2206.18
+2024-12-30 21:54:18,989 INFO get_training(278) Obtaining training estimation with Forecaster 0
+2024-12-30 21:54:19,379 INFO get_training(296) Backtesting on training data with MAPE 0.01, MAE 322.40!
+2024-12-30 21:54:19,500 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.035132142647161906), 'mae': np.float64(2206.1831428970468)}!
+2024-12-30 21:54:19,500 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-30 22:06:34,398 INFO train_new_model(61) Training new model...
+2024-12-30 22:06:34,591 INFO __init__(342) Initializing LGBM Forecaster 1
+2024-12-30 22:06:34,592 INFO tune(189) Tuning LGBM Forecaster 1
+2024-12-30 22:07:38,895 INFO tune(212) Tuning results: 
+2024-12-30 22:07:38,897 INFO tune(215) Best parameters:
+ lags                                                                            [1]
+params                            {'num_leaves': 186, 'max_depth': 13, 'learning...
+mean_absolute_error                                                     1522.307286
+mean_absolute_percentage_error                                             0.027891
+num_leaves                                                                    186.0
+max_depth                                                                      13.0
+learning_rate                                                              0.131964
+n_estimators                                                                  336.0
+reg_alpha                                                                 12.354431
+reg_lambda                                                                30.274373
+name                                                                           lgbm
+Name: 0, dtype: object
+2024-12-30 22:07:38,897 INFO fit_with_best(164) Fitting LGBM Forecaster 1 for predictions
+2024-12-30 22:07:39,173 INFO fit_with_best(177) Setting parameters...
+2024-12-30 22:07:39,173 INFO fit_with_best(179) Setting lags...
+2024-12-30 22:07:39,174 INFO fit_with_best(183) Fitting over the whole training and dev sets 01.01.2020 00:00 - 29.12.2024 00:00 ...
+2024-12-30 22:07:42,132 INFO fit_with_best(185) Training done!
+2024-12-30 22:07:42,132 INFO tune(221) Model trained with data from 2020-01-01 00:00:00+00:00 until 2024-12-29 00:00:00+00:00!
+2024-12-30 22:07:42,132 INFO save_to_file(134) Saving LGBM Forecaster 1 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/lgbm_forecaster_1.joblib.
+2024-12-30 22:07:47,314 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-30 22:07:47,314 INFO predict(252) Making predictions with LGBM Forecaster 1
+2024-12-30 22:07:49,065 INFO predict(273) Comparison between data and predicted, MAPE: 0.02, MAE: 1371.71
+2024-12-30 22:07:49,069 INFO get_training(278) Obtaining training estimation with Forecaster 1
+2024-12-30 22:07:49,938 INFO get_training(296) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-30 22:07:50,115 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.021995901665920064), 'mae': np.float64(1371.713106387578)}!
+2024-12-30 22:07:50,115 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.00961736959152036), 'mae': np.float64(601.375)}!
+2024-12-31 12:11:58,543 INFO merge_raw_files(41) Merging raw files...
+2024-12-31 12:11:59,022 INFO download_new_data(21) Downloading new data...
+2024-12-31 12:11:59,077 INFO download_new_data(32) Last download less than 24h ago, aborting download...
+2024-12-31 12:12:36,538 INFO merge_raw_files(41) Merging raw files...
+2024-12-31 12:12:37,050 INFO download_new_data(21) Downloading new data...
+2024-12-31 12:12:39,320 INFO merge_raw_files(41) Merging raw files...
+2024-12-31 12:12:54,743 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:12:54,744 INFO predict(252) Making predictions with LGBM Forecaster 1
+2024-12-31 12:12:56,277 INFO predict(273) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:12:56,278 INFO get_training(278) Obtaining training estimation with Forecaster 1
+2024-12-31 12:12:56,793 INFO get_training(296) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:12:56,959 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:12:56,959 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:16:25,017 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:16:25,017 INFO predict(252) Making predictions with LGBM Forecaster 1
+2024-12-31 12:16:26,267 INFO predict(273) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:16:26,268 INFO get_training(278) Obtaining training estimation with Forecaster 1
+2024-12-31 12:16:26,921 INFO get_training(296) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:16:27,045 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:16:27,045 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:17:06,766 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:17:06,766 INFO predict(252) Making predictions with LGBM Forecaster 1
+2024-12-31 12:17:07,826 INFO predict(273) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:17:07,827 INFO get_training(278) Obtaining training estimation with Forecaster 1
+2024-12-31 12:17:08,260 INFO get_training(296) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:17:08,374 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:17:08,375 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:20:08,514 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:20:08,514 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:20:10,104 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:20:10,104 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:20:10,721 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:20:10,897 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:20:10,898 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:20:30,179 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:20:30,179 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:20:31,235 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:20:31,236 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:20:31,695 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:20:31,836 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:20:31,836 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:21:17,007 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:21:17,007 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:21:18,076 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:21:18,077 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:21:18,510 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:21:18,626 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:21:18,626 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:24:22,276 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:24:22,276 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:24:23,323 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:24:23,324 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:24:23,762 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:24:23,881 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:24:23,881 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:24:57,425 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:24:57,426 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:24:58,559 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:24:58,559 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:24:58,990 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:24:59,105 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:24:59,105 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:25:09,750 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:25:09,750 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:25:10,803 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:25:10,804 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:25:11,236 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:25:11,349 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:25:11,350 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:27:17,527 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:27:17,527 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:27:18,592 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:27:18,593 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:27:19,054 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:27:19,170 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:27:19,170 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:28:10,802 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:28:10,802 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:28:11,867 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:28:11,868 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:28:12,315 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:28:12,430 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:28:12,430 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:29:37,541 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:29:37,541 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:29:39,137 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:29:39,137 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:29:39,592 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:29:39,712 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:29:39,712 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:30:59,761 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:30:59,761 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:31:00,815 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:31:00,815 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:31:01,247 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:31:01,363 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:31:01,364 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:31:40,432 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:31:40,432 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:31:41,479 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:31:41,481 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:31:41,926 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:31:42,038 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:31:42,038 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:32:02,358 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:32:02,358 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:32:03,417 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:32:03,419 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:32:03,859 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:32:03,981 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:32:03,981 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:32:21,754 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:32:21,754 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:32:23,098 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:32:23,099 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:32:23,558 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:32:23,680 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:32:23,680 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:32:49,937 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:32:49,937 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:32:50,990 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:32:50,992 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:32:51,427 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:32:51,545 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:32:51,545 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:33:06,446 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:33:06,446 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:33:07,661 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:33:07,662 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:33:08,087 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:33:08,210 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:33:08,210 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:33:21,282 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:33:21,283 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:33:22,780 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:33:22,780 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:33:23,232 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:33:23,373 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:33:23,373 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:33:27,328 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:33:27,328 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:33:28,391 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:33:28,392 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:33:28,857 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:33:28,978 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:33:28,978 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:33:56,108 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:33:56,108 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:33:57,159 INFO predict(275) Comparison between data and predicted, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:33:57,160 INFO get_training(280) Obtaining training estimation with Forecaster 1
+2024-12-31 12:33:57,597 INFO get_training(298) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:33:57,715 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:33:57,715 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:48:34,659 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:49:14,541 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:49:14,541 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:49:15,592 INFO predict(281) Comparison between data and predicted until 2024-12-31 00:00:00+00:00, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:49:15,592 INFO get_training(286) Obtaining training estimation with Forecaster 1
+2024-12-31 12:49:16,026 INFO get_training(304) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:49:16,138 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:49:16,379 INFO predict(281) Comparison between data and predicted until 2024-12-30 01:00:00+00:00, MAPE: 0.02, MAE: 1391.18
+2024-12-31 12:49:16,494 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:49:16,494 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:51:10,670 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:51:10,671 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:51:12,194 INFO predict(281) Comparison between data and predicted until 2024-12-31 00:00:00+00:00, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:51:12,195 INFO get_training(288) Obtaining training estimation with Forecaster 1
+2024-12-31 12:51:12,701 INFO get_training(306) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:51:12,830 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:51:13,153 INFO predict(281) Comparison between data and predicted until 2024-12-30 01:00:00+00:00, MAPE: 0.02, MAE: 1391.18
+2024-12-31 12:51:13,279 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:51:13,279 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:52:12,749 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:52:12,749 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:52:14,569 INFO predict(281) Comparison between data and predicted until 2024-12-31 00:00:00+00:00, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:52:14,569 INFO get_training(288) Obtaining training estimation with Forecaster 1
+2024-12-31 12:52:15,290 INFO get_training(306) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:52:15,427 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:52:15,965 INFO predict(281) Comparison between data and predicted until 2024-12-30 01:00:00+00:00, MAPE: 0.02, MAE: 1391.18
+2024-12-31 12:52:16,138 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:52:16,139 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
+2024-12-31 12:52:41,489 INFO get_model_prediction(51) Making predictions using previous model...
+2024-12-31 12:52:41,489 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:52:42,537 INFO predict(281) Comparison between data and predicted until 2024-12-31 00:00:00+00:00, MAPE: 0.02, MAE: 1215.62
+2024-12-31 12:52:42,538 INFO get_training(288) Obtaining training estimation with Forecaster 1
+2024-12-31 12:52:42,976 INFO get_training(306) Backtesting on training data with MAPE 0.00, MAE 218.14!
+2024-12-31 12:52:43,091 INFO predict(254) Making predictions with LGBM Forecaster 1
+2024-12-31 12:52:43,333 INFO predict(281) Comparison between data and predicted until 2024-12-30 01:00:00+00:00, MAPE: 0.02, MAE: 1391.18
+2024-12-31 12:52:43,445 INFO <module>(146) Forecast with metrics {'mape': np.float64(0.019154082005351014), 'mae': np.float64(1215.622945919072)}!
+2024-12-31 12:52:43,446 INFO <module>(147) Entsoe forecast with metrics {'mape': np.float64(0.015592847791514201), 'mae': np.float64(1004.5729166666666)}!
