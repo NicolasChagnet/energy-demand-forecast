@@ -124,7 +124,7 @@ if __name__ == "__main__":
     stream_handler.setLevel(logging.DEBUG)
 
     file_formatter = logging.Formatter("%(asctime)s %(levelname)s %(funcName)s(%(lineno)d) %(message)s")
-    file_handler = RotatingFileHandler(config.path_log)
+    file_handler = RotatingFileHandler(config.path_log, maxBytes=2_000)
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(file_formatter)
 
