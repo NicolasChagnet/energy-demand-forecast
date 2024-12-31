@@ -8,6 +8,7 @@ from dotenv import dotenv_values
 
 from src import config, data, models
 from src.figure import PredictionFigure
+from src.models import ForecasterRecursiveModel
 
 list_models = {"lgbm": models.ForecasterRecursiveLGBM, "xgb": models.ForecasterRecursiveXGB}
 
@@ -55,20 +56,40 @@ def get_model_prediction() -> dict | None:
     return model.package_prediction()
 
 
-def train_new_model(model: str | None = None, force: bool = False):
-    """Train a new model using the data stored."""
-    # Choosing the model
-    model = model or "lgbm"
-    model_class = list_models.get(model, "lgbm")
-
-    # Training the model
+def train_new_model(model_class: type[ForecasterRecursiveModel], n_iteration: int) -> None:
+    """Train a new model of a given model class."""
     logger.info("Training new model...")
-    n_iteration, old_model = models.get_last_model()
     current_data = data.load_full_data()
     latest_idx = current_data.index[-1]
     end_train_cutoff = latest_idx - pd.Timedelta(days=1)
-    model = model_class(n_iteration + 1, end_dev=end_train_cutoff)
+    model = model_class(n_iteration, end_dev=end_train_cutoff)
     model.tune()
+
+
+def handle_training(model_type: str | None = None, force: bool = False) -> None:
+    """If the current model is old enough, request a new model to be trained."""
+    # Choosing the model
+    model_type = model_type or "lgbm"
+    model_class = list_models[model_type]
+
+    # Load the current model and check how long since it's been trained
+    n_iteration, current_model = models.get_last_model()
+    if current_model is None:
+        # If no model has been trained so far, train a new one
+        train_new_model(model_class, 0)
+        return None
+
+    last_training_current_model = current_model.end_dev
+    today = pd.Timestamp.utcnow()
+    hours_since_last_training = (today - last_training_current_model).total_seconds() // 3600
+
+    # Train a new model every seven days
+    if hours_since_last_training >= 24 * 7 or force:
+        train_new_model(model_class, n_iteration + 1)
+    else:
+        logger.info(
+            f"The current model was trained up to about {int(hours_since_last_training//24)} day(s) ago ({hours_since_last_training:.0f}h), no retraining necessary..."
+        )
 
 
 def make_plot(out_prediction: dict) -> None:
@@ -137,7 +158,7 @@ if __name__ == "__main__":
         else:
             download_new_data(api_key=API_KEY, force=args.force)
     if args.subcommand == "train":
-        train_new_model(model=args.model, force=args.force)
+        handle_training(model_type=args.model, force=args.force)
     if args.subcommand == "predict":
         out = get_model_prediction()
         if out is not None:
