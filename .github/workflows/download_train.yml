@@ -35,7 +35,7 @@ jobs:
             - name: Run download
               run: uv run main.py download
             - name: Run training
-              run: uv run main.py training --force
+              run: uv run main.py train --force
             - name: Make demo page
               run: uv run main.py predict --plot
             - name: Check for changes # create env variable indicating if any changes were made
