@@ -19,8 +19,10 @@ class PredictionFigure:
         y_pred = pd.concat([self.output_prediction["train_pred"], self.output_prediction["future_pred"]])
         y_forecast = self.output_prediction["future_forecast"]
 
-        total_days_prediction = (
-            self.output_prediction["future_pred"].index.max() - self.output_prediction["future_pred"].index.min()
+        total_hours_prediction = (
+            self.output_prediction["future_pred"].index.max()
+            - self.output_prediction["future_pred"].index.min()
+            + pd.Timedelta(hours=1)
         ).total_seconds() // 3600
 
         actual_legend = "Total system load (actual)<br>"
@@ -28,12 +30,12 @@ class PredictionFigure:
             "Total system load (model prediction)<br>"
             f"Model training: MAE = {self.output_prediction['metrics_train']['mae']:.0f}, MAPE = {self.output_prediction['metrics_train']['mape']:.2f}<br>"
             f"Model prediction (24h): MAE = {self.output_prediction['metrics_future_one_day']['mae']:.0f}, MAPE = {self.output_prediction['metrics_future_one_day']['mape']:.2f}<br>"
-            f"Model prediction ({total_days_prediction:.0f}h): MAE = {self.output_prediction['metrics_future']['mae']:.0f}, MAPE = {self.output_prediction['metrics_future']['mape']:.2f}<br>"
+            f"Model prediction ({total_hours_prediction:.0f}h): MAE = {self.output_prediction['metrics_future']['mae']:.0f}, MAPE = {self.output_prediction['metrics_future']['mape']:.2f}<br>"
         )
         forecast_legend = (
             'Total system load (ENTSOE one-day forecast)<br>'
             f"Entsoe forecast (24h): MAE = {self.output_prediction['metrics_forecast_one_day']['mae']:.0f}, MAPE = {self.output_prediction['metrics_forecast_one_day']['mape']:.2f}<br>"
-            f"Entsoe forecast ({total_days_prediction:.0f}h): MAE = {self.output_prediction['metrics_forecast']['mae']:.0f}, MAPE = {self.output_prediction['metrics_forecast']['mape']:.2f}"
+            f"Entsoe forecast ({total_hours_prediction:.0f}h): MAE = {self.output_prediction['metrics_forecast']['mae']:.0f}, MAPE = {self.output_prediction['metrics_forecast']['mape']:.2f}"
         )
 
         self.fig.add_trace(go.Scatter(x=y_actual.index, y=y_actual, mode="lines+markers", name=actual_legend))
