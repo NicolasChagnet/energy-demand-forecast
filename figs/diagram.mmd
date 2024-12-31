@@ -1,0 +1,71 @@
+---
+title: Symbolic representation of the codebase
+---
+classDiagram
+    class PredictionFigure {
+        - __init__(self, output_prediction) None
+        + make_plot(self)
+        + write_to_file(self) None
+    }
+    namespace preprocessing {
+
+        class ExogBuilder {
+            - __init__(self, periods, country_code) None
+            - _get_time_columns(self, X) pd.DataFrame
+            + build(self, start_date, end_date) pd.DataFrame
+        }
+
+        class LinearlyInterpolateTS {
+            + apply(self, y) pd.Series
+        }
+    }
+    namespace models {
+
+
+        class ForecasterRecursiveModel {
+            + ForecasterRecursive forecaster
+            + str name
+            - __init__(self, iteration, end_dev) None
+            + save_to_file(self) None
+            - _build_cv_dev(self, train_size) TimeSeriesFold
+            - _build_cv_test(self, train_size) TimeSeriesFold
+            + fit_with_best(self) None
+            + tune(self) None
+            + backtest(self) None
+            + predict(self, delta_predict) tuple[dict, tuple[pd.Series, pd.Series]]
+            + get_training(self) tuple[dict, tuple[pd.Series, pd.Series]]
+            + get_error_forecast(self, delta_predict) tuple[dict, tuple[pd.Series, pd.Series]]
+            + package_prediction(self)
+            + get_feature_importance(self) pd.DataFrame | None
+        }
+
+        class ForecasterRecursiveLGBM {
+            - __init__(self, iteration, end_dev) None
+        }
+
+        class ForecasterRecursiveXGB {
+            - __init__(self, iteration, end_dev) None
+        }
+    }
+
+    ForecasterRecursiveLGBM --|> ForecasterRecursiveModel
+
+    ForecasterRecursiveXGB --|> ForecasterRecursiveModel
+
+
+   namespace main {
+       class download
+       class train
+       class predict { +plot }
+   }
+
+   class index["index.html"]
+   class EntsoePandasClient
+%%   note for EntsoePandasClient "External client connecting to Entsoe API"
+
+    predict --> PredictionFigure
+    PredictionFigure --> index
+    download --> EntsoePandasClient
+    train --> ForecasterRecursiveLGBM
+    ForecasterRecursiveModel -- ExogBuilder
+    ForecasterRecursiveModel -- LinearlyInterpolateTS
