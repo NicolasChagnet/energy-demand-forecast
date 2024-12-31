@@ -705,3 +705,69 @@ Name: 0, dtype: object
 2024-12-31 17:22:11,640 INFO predict(280) Comparison between data and predicted until 2024-12-31 00:00:00+00:00, MAPE: 0.02, MAE: 1437.68
 2024-12-31 17:22:11,764 INFO <module>(144) Forecast with metrics {'mape': np.float64(0.021216016541790544), 'mae': np.float64(1437.6765175132805)}!
 2024-12-31 17:22:11,764 INFO <module>(145) Entsoe forecast with metrics {'mape': np.float64(0.020730541822787142), 'mae': np.float64(1356.7916666666667)}!
+2024-12-31 23:22:43,420 ERROR get_model_prediction(53) No model found, train a model first!
+2024-12-31 23:22:50,789 INFO train_new_model(61) Training new model...
+2024-12-31 23:22:50,863 INFO __init__(363) Initializing LGBM Forecaster 1
+2024-12-31 23:22:50,963 INFO tune(190) Tuning LGBM Forecaster 1
+2024-12-31 23:23:16,509 INFO train_new_model(61) Training new model...
+2024-12-31 23:23:16,567 INFO __init__(363) Initializing LGBM Forecaster 0
+2024-12-31 23:23:16,654 INFO tune(190) Tuning LGBM Forecaster 0
+2024-12-31 23:24:11,518 INFO tune(213) Tuning results: 
+2024-12-31 23:24:11,519 INFO tune(216) Best parameters:
+ lags                                                                            [1]
+params                            {'num_leaves': 184, 'max_depth': 12, 'learning...
+mean_absolute_error                                                     1607.769093
+mean_absolute_percentage_error                                             0.029575
+num_leaves                                                                    184.0
+max_depth                                                                      12.0
+learning_rate                                                               0.10588
+n_estimators                                                                  222.0
+reg_alpha                                                                 97.626298
+reg_lambda                                                                36.296633
+name                                                                           lgbm
+Name: 0, dtype: object
+2024-12-31 23:24:11,520 INFO fit_with_best(163) Fitting LGBM Forecaster 0 for predictions
+2024-12-31 23:24:11,809 INFO fit_with_best(176) Setting parameters...
+2024-12-31 23:24:11,809 INFO fit_with_best(178) Setting lags...
+2024-12-31 23:24:11,809 INFO fit_with_best(182) Fitting over the whole training and dev sets 01.01.2020 00:00 - 30.12.2024 00:00 ...
+2024-12-31 23:24:14,102 INFO fit_with_best(186) Training done!
+2024-12-31 23:24:14,103 INFO tune(222) Model trained with data from 2020-01-01 00:00:00+00:00 until 2024-12-30 00:00:00+00:00!
+2024-12-31 23:24:14,103 INFO save_to_file(133) Saving LGBM Forecaster 0 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/lgbm_forecaster_0.joblib.
+2024-12-31 23:25:40,426 INFO train_new_model(61) Training new model...
+2024-12-31 23:25:40,482 INFO __init__(363) Initializing LGBM Forecaster 1
+2024-12-31 23:25:40,483 INFO tune(190) Tuning LGBM Forecaster 1
+2024-12-31 23:27:16,773 INFO merge_raw_files(41) Merging raw files...
+2024-12-31 23:27:17,270 INFO download_new_data(24) Downloading new data...
+2024-12-31 23:27:18,752 INFO merge_raw_files(41) Merging raw files...
+2024-12-31 23:27:30,189 INFO train_new_model(61) Training new model...
+2024-12-31 23:27:30,247 INFO __init__(363) Initializing LGBM Forecaster 1
+2024-12-31 23:27:30,247 INFO tune(190) Tuning LGBM Forecaster 1
+2024-12-31 23:28:14,283 INFO tune(213) Tuning results: 
+2024-12-31 23:28:14,284 INFO tune(216) Best parameters:
+ lags                                                                            [1]
+params                            {'num_leaves': 184, 'max_depth': 12, 'learning...
+mean_absolute_error                                                     1607.769093
+mean_absolute_percentage_error                                             0.029575
+num_leaves                                                                    184.0
+max_depth                                                                      12.0
+learning_rate                                                               0.10588
+n_estimators                                                                  222.0
+reg_alpha                                                                 97.626298
+reg_lambda                                                                36.296633
+name                                                                           lgbm
+Name: 0, dtype: object
+2024-12-31 23:28:14,285 INFO fit_with_best(163) Fitting LGBM Forecaster 1 for predictions
+2024-12-31 23:28:14,534 INFO fit_with_best(176) Setting parameters...
+2024-12-31 23:28:14,535 INFO fit_with_best(178) Setting lags...
+2024-12-31 23:28:14,535 INFO fit_with_best(182) Fitting over the whole training and dev sets 01.01.2020 00:00 - 30.12.2024 00:00 ...
+2024-12-31 23:28:16,192 INFO fit_with_best(186) Training done!
+2024-12-31 23:28:16,192 INFO tune(222) Model trained with data from 2020-01-01 00:00:00+00:00 until 2024-12-30 00:00:00+00:00!
+2024-12-31 23:28:16,192 INFO save_to_file(133) Saving LGBM Forecaster 1 to /home/nchagnet/devs/tutorials/energy-demand-forecast/models/lgbm_forecaster_1.joblib.
+2024-12-31 23:29:43,284 INFO train_new_model(61) Training new model...
+2024-12-31 23:29:43,343 INFO __init__(363) Initializing LGBM Forecaster 2
+2024-12-31 23:29:43,343 INFO tune(190) Tuning LGBM Forecaster 2
+2024-12-31 23:31:40,232 INFO handle_training(90) Current model is only 6.0 days old (46.0h), no retraining necessary...
+2024-12-31 23:32:30,789 INFO handle_training(90) The current model was trained up to about 6 days ago (46.0h), no retraining necessary...
+2024-12-31 23:32:39,589 INFO handle_training(90) The current model was trained up to about 6 days ago (46h), no retraining necessary...
+2024-12-31 23:32:59,451 INFO handle_training(90) The current model was trained up to about 1 days ago (46h), no retraining necessary...
+2024-12-31 23:33:07,334 INFO handle_training(90) The current model was trained up to about 1 day(s) ago (46h), no retraining necessary...
