@@ -53,8 +53,6 @@ class PredictionFigure:
             line_width=2,
             line_color="black",
             line_dash="dash",
-            # annotation_text="End of training period",
-            # annotation_position="top right",
         )
         self.fig.add_annotation(
             # xanchor="left",
@@ -64,12 +62,6 @@ class PredictionFigure:
             yref="paper",
             y=1.1,
         )
-        # end_training = self.output_prediction["train_actual"].index.max()
-        # self.fig.add_trace(go.Scatter(x=[end_training, end_training],
-        #                          y=[min_range_y, max_range_y],
-        #                          mode='lines',
-        #                          line=dict(color='black', width=2, dash='dash'),
-        #                          name='End of training period'))
 
     def write_to_file(self) -> None:
         """Write Plotly plot to HTML file."""
