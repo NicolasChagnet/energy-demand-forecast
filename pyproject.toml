@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = "==3.11.9"
 dependencies = [
     "astral>=3.2",
+    "dill>=0.3.9",
     "entsoe-py>=0.6.16",
     "holidays==0.51",
     "ipykernel>=6.29.5",

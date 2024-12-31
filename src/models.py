@@ -5,7 +5,6 @@ import logging
 import re
 from pathlib import Path
 
-import joblib
 import pandas as pd
 from lightgbm import LGBMRegressor
 from optuna.trial import Trial
@@ -16,7 +15,7 @@ from sklearn.metrics import mean_absolute_error, mean_absolute_percentage_error
 from xgboost import XGBRegressor
 
 from src import config as c
-from src import data
+from src import data, io
 from src.preprocessing import ExogBuilder, LinearlyInterpolateTS
 
 logger = logging.getLogger(c.logger_name)
@@ -49,7 +48,7 @@ def load_iteration(name: str, iteration: int) -> ForecasterRecursiveModel | None
     if not path_file.exists():
         logger.error(f"Iteration {iteration} does not exist!")
         return None
-    model: ForecasterRecursiveModel = joblib.load(path_file)
+    model: ForecasterRecursiveModel = io.load_from_file(path_file)
     return model
 
 
@@ -107,7 +106,7 @@ def get_last_model() -> tuple[int, ForecasterRecursiveModel | None]:
     if len(file_names) == 0:
         return -1, None
     file_name = file_names[0]
-    return max_iter, joblib.load(file_name)
+    return max_iter, io.load_from_file(file_name)
 
 
 class ForecasterRecursiveModel:
@@ -132,7 +131,7 @@ class ForecasterRecursiveModel:
         """Save model to file."""
         path_to_save = get_path_model(self.name, self.iteration)
         logger.info(f"Saving {self.name.upper()} Forecaster {self.iteration} to {path_to_save}.")
-        joblib.dump(self, path_to_save)
+        io.save_to_file(self, path_to_save)
 
     def _build_cv_dev(self, train_size: int) -> TimeSeriesFold:
         """Build cross validation time folds for hyperparameter tuning."""

@@ -36,6 +36,8 @@ debugpy==1.8.11
     # via ipykernel
 decorator==5.1.1
     # via ipython
+dill==0.3.9
+    # via energy-demand-forecast (pyproject.toml)
 entsoe-py==0.6.16
     # via energy-demand-forecast (pyproject.toml)
 executing==2.1.0
