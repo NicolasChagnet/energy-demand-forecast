@@ -13,10 +13,12 @@ list_models = {"lgbm": models.ForecasterRecursiveLGBM, "xgb": models.ForecasterR
 
 
 def merge_build_manual() -> None:
+    """Merge raw files together."""
     data.merge_raw_files()
 
 
 def download_new_data(api_key: str, start: str | None = None, end: str | None = None, force: bool = False) -> None:
+    """Download new data from the Entsoe API for a given period."""
     data.merge_raw_files()
     logger.info("Downloading new data...")
     if start is None:
@@ -44,6 +46,7 @@ def download_new_data(api_key: str, start: str | None = None, end: str | None = 
 
 
 def get_model_prediction() -> dict | None:
+    """Get the prediction from the latest model trained."""
     n_iteration, model = models.get_last_model()
     if n_iteration < 0 or model is None:
         logger.error("No model found, train a model first!")
@@ -53,6 +56,7 @@ def get_model_prediction() -> dict | None:
 
 
 def train_new_model(model: str | None = None, force: bool = False):
+    """Train a new model using the data stored."""
     # Choosing the model
     model = model or "lgbm"
     model_class = list_models.get(model, "lgbm")
@@ -68,6 +72,7 @@ def train_new_model(model: str | None = None, force: bool = False):
 
 
 def make_plot(out_prediction: dict) -> None:
+    """Make a plot with the latest predictions."""
     fig = PredictionFigure(out_prediction)
     fig.make_plot()
     fig.write_to_file()
