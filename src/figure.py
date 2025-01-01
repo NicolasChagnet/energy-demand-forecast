@@ -24,6 +24,7 @@ class PredictionFigure:
             - self.output_prediction["future_pred"].index.min()
             + pd.Timedelta(hours=1)
         ).total_seconds() // 3600
+        end_training = self.output_prediction["train_actual"].index.max()
 
         actual_legend = "Total system load (actual)<br>"
         pred_legend = (
@@ -43,13 +44,12 @@ class PredictionFigure:
         self.fig.add_trace(go.Scatter(x=y_forecast.index, y=y_forecast, mode="lines+markers", name=forecast_legend))
         self.fig.update_layout(legend_valign="top")
         max_range = y_actual.index.max()
-        min_range = max_range - pd.Timedelta(days=3)
+        min_range = end_training - pd.Timedelta(days=1)
         self.fig.update_xaxes(range=[min_range, max_range])
         min_range_y = 0.8 * y_actual.loc[min_range:max_range].min()
         max_range_y = 1.2 * y_actual.loc[min_range:max_range].max()
         self.fig.update_yaxes(range=[min_range_y, max_range_y])
 
-        end_training = self.output_prediction["train_actual"].index.max()
         self.fig.add_vline(
             x=end_training,
             line_width=2,
