@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from matplotlib import pyplot as plt
 from statsmodels.tsa.stattools import adfuller
 
@@ -9,13 +8,13 @@ def plot_distribution(series: pd.Series, ax: plt.Axes | None = None) -> None:
     if ax is None:
         fig, ax = plt.subplots()
     if series.nunique() < 100:
-        sns.histplot(series, ax=ax, bins=30)
+        series.plot.hist(ax=ax, bins=30)
     else:
-        sns.kdeplot(series, ax=ax)
+        series.plot.kde(ax=ax)
 
 
 def plot_distributions(df: pd.DataFrame) -> None:
-    n_cols = 3
+    n_cols = 2
     cols = df.columns
     n_features = len(cols)
     n_rows = int(np.ceil(n_features / n_cols))
@@ -39,17 +38,16 @@ def plot_series(
     """
     Plots a certain time-series with a 'label', 'ylabel', 'title', 'start' and 'end' of the plot.
     """
-    series = series or pd.Series([])
-    sns.set_theme()
+    series = pd.Series([]) if series is None else series
     if ax is None:
         fig, ax = plt.subplots(figsize=(30, 12))
     ax.set_xlabel("Time", fontsize=16)
 
     if label is not None:
-        sns.lineplot(series, label=label, ax=ax)
+        series.plot.line(label=label, ax=ax)
         ax.legend(fontsize=16)
     else:
-        sns.lineplot(series, ax=ax)
+        series.plot.line(ax=ax)
     if ylabel is not None:
         ax.set_ylabel(ylabel, fontsize=16)
     if title is not None:
