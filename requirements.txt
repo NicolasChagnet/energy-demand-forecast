@@ -44,6 +44,8 @@ ipython==8.31.0
     # via ipykernel
 jedi==0.19.2
     # via ipython
+jinja2==3.1.5
+    # via energy-demand-forecast (pyproject.toml)
 joblib==1.4.2
     # via
     #   energy-demand-forecast (pyproject.toml)
@@ -64,9 +66,11 @@ llvmlite==0.43.0
 mako==1.3.8
     # via alembic
 markupsafe==3.0.2
-    # via mako
-matplotlib==3.10.0
-    # via seaborn
+    # via
+    #   jinja2
+    #   mako
+matplotlib==3.9.0
+    # via energy-demand-forecast (pyproject.toml)
 matplotlib-inline==0.1.7
     # via
     #   ipykernel
@@ -89,7 +93,6 @@ numpy==2.0.2
     #   patsy
     #   scikit-learn
     #   scipy
-    #   seaborn
     #   skforecast
     #   statsmodels
     #   xgboost
@@ -109,7 +112,6 @@ pandas==2.2.2
     #   energy-demand-forecast (pyproject.toml)
     #   entsoe-py
     #   scikit-lego
-    #   seaborn
     #   skforecast
     #   statsmodels
 parso==0.8.4
@@ -174,8 +176,6 @@ scipy==1.13.1
     #   scikit-learn
     #   statsmodels
     #   xgboost
-seaborn==0.13.2
-    # via energy-demand-forecast (pyproject.toml)
 six==1.17.0
     # via python-dateutil
 skforecast==0.14.0
