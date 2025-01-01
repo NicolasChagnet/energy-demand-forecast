@@ -40,10 +40,11 @@ def merge_raw_files() -> None:
     """Merges all raw files in the folder `/data/raw` into one file in the `interim` folder."""
     logger.info("Merging raw files...")
     list_dfs = [treat_df(f) for f in c.path_data_raw.glob("*.csv")]
-    merged_df = pd.concat(list_dfs)
-    merged_df = merged_df.sort_index()
-    merged_df = merged_df.loc[merged_df.index < pd.Timestamp.utcnow()]
-    merged_df.to_csv(c.path_data_load)
+    if len(list_dfs) > 0:
+        merged_df = pd.concat(list_dfs)
+        merged_df = merged_df.sort_index()
+        merged_df = merged_df.loc[merged_df.index < pd.Timestamp.utcnow()]
+        merged_df.to_csv(c.path_data_load)
 
 
 def load_timeseries() -> pd.Series:
