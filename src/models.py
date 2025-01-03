@@ -318,7 +318,7 @@ class ForecasterRecursiveModel:
         )
         return X_train, y_train
 
-    def get_training(self) -> tuple[dict, tuple[pd.Series, pd.Series]]:
+    def get_error_training(self) -> tuple[dict, tuple[pd.Series, pd.Series]]:
         """Get the error on the training dataset."""
         logger.info(f"Obtaining training estimation with Forecaster {self.iteration}")
 
@@ -360,7 +360,7 @@ class ForecasterRecursiveModel:
     def package_prediction(self):
         """Method to package all the output for a 24h prediction"""
         metrics, (y_future, y_future_pred) = self.predict()
-        metrics_train, (y_train, y_train_pred) = self.get_training()
+        metrics_train, (y_train, y_train_pred) = self.get_error_training()
         metrics_forecast, (_, y_forecast) = self.get_error_forecast()
         metrics_one_day, _ = self.predict(delta_predict=pd.Timedelta(hours=24))
         metrics_forecast_one_day, _ = self.get_error_forecast(delta_predict=pd.Timedelta(hours=24))
