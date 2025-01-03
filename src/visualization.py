@@ -59,12 +59,18 @@ def plot_series(
 def plot_periodogram(frequencies: list[int], spectrum: list[float], ax: plt.Axes | None = None) -> plt.Axes:
     if ax is None:
         _, ax = plt.subplots(figsize=(24, 12))
-    ax.step(frequencies, spectrum, color="purple")
+    ax.step(frequencies, spectrum, lw=2)
     ax.set_xscale("log")
     day_hours = 24
     week_day = 7
     month_day = 30
     year_month = 12
+
+    font = {
+        "weight": "normal",
+        "size": 16,
+    }
+
     times = {
         "4 years": 4 * year_month * month_day * day_hours,
         "2 years": 2 * year_month * month_day * day_hours,
@@ -81,13 +87,12 @@ def plot_periodogram(frequencies: list[int], spectrum: list[float], ax: plt.Axes
     }
     ax.set_xlim(0.8 / max(times.values()), 1.2 / min(times.values()))
     ax.set_xticks([1.0 / time for time in times.values()])
-    ax.set_xticklabels(
-        [f"Every {key}" for key in times.keys()],
-        rotation=90,
-    )
+    ax.set_xticklabels([f"Every {key}" for key in times.keys()], rotation=90)
+    ax.tick_params(axis="both", labelsize=13)
     ax.ticklabel_format(axis="y", style="sci", scilimits=(0, 0))
-    ax.set_ylabel("Variance")
-    ax.set_title("Periodogram")
+    ax.set_ylabel("Variance", fontdict=font)
+    ax.set_xlabel("Frequencies", fontdict=font)
+    ax.set_title("Periodogram", fontdict=dict(fontsize=20))
     return ax
 
 
@@ -113,3 +118,35 @@ def test_stationarity(ts: pd.Series, window: int = 12) -> None:
     for key, value in dftest[4].items():
         dfoutput[f"Critical Value ({key})"] = value
     print(dfoutput)
+
+
+def plot_superimposed(
+    df: pd.DataFrame,
+    x: str,
+    y: str,
+    hue: str,
+    group: str,
+    kind: str = "line",
+    ax: plt.Axes | None = None,
+):
+    if ax is None:
+        fig, ax = plt.subplots()
+
+    groups = df[group].unique()
+    for group_val in groups:
+        df_sub = df.loc[df[group] == group_val]
+        if hue not in df.columns:
+            ax.plot(df_sub[x], df_sub[y], alpha=0.25, color=hue)
+        else:
+            hues = df[hue].unique()
+            for hue_val in hues:
+                df_subsub = df_sub.loc[df_sub[hue] == hue_val]
+                ax.plot(df_subsub[x], df_subsub[y], alpha=0.25, label=hue_val)
+
+    font = {
+        "weight": "normal",
+        "size": 16,
+    }
+    ax.set_xlabel(x.capitalize(), fontdict=font)
+    ax.set_ylabel(y.capitalize(), fontdict=font)
+    ax.set_title(f"Data grouped by {group}")
