@@ -59,6 +59,8 @@ def search_space_lgbm(trial: Trial) -> dict:
         "max_depth": trial.suggest_int("max_depth", 3, 16),
         "learning_rate": trial.suggest_float("learning_rate", 0.001, 0.2, log=True),
         "n_estimators": trial.suggest_int("n_estimators", 50, 1000, log=True),
+        "bagging_fraction": trial.suggest_float("bagging_fraction", 0.5, 1),
+        "feature_fraction": trial.suggest_float("feature_fraction", 0.5, 1),
         "reg_alpha": trial.suggest_float("reg_alpha", 0.01, 100),
         "reg_lambda": trial.suggest_float("reg_lambda", 0.01, 100),
         "lags": trial.suggest_categorical("lags", c.lags_consider),
@@ -189,7 +191,7 @@ class ForecasterRecursiveModel:
         logger.info(
             f"Fitting over the whole training and dev sets {start_train.strftime(c.FORMAT_DATE_CSV)} - {self.end_dev.strftime(c.FORMAT_DATE_CSV)} ..."
         )
-        self.forecaster.fit(y.loc[start_train : self.end_dev], exog=X)
+        self.forecaster.fit(y.loc[start_train : self.end_dev], exog=X.loc[start_train : self.end_dev])
         logger.info("Training done!")
 
     def tune(self) -> None:
