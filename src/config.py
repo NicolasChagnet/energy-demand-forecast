@@ -36,7 +36,6 @@ delta_forecast = pd.Timedelta(hours=predict_size)
 train_size = pd.Timedelta(days=3 * 365)
 number_folds = 10
 delta_val = pd.Timedelta(hours=predict_size * refit_size * number_folds)
-start_train = "2019-01-01 00:00+00:00"
 end_train_default = "2024-06-25 00:00+00:00"
 
 # Periods for cyclical features (in hours)

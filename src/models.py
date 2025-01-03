@@ -117,12 +117,11 @@ class ForecasterRecursiveModel:
     def __init__(
         self,
         iteration: int,
-        end_dev: str = None,
+        end_dev: str | None = None,
         train_size: pd.Timedelta | None = None,
         save_model_to_file: bool = True,
     ):
         self.iteration = iteration
-        self.start_train = c.start_train
         self.end_dev = pd.to_datetime(end_dev if end_dev is not None else c.end_train_default, utc=True)
         self.end_train = pd.to_datetime(self.end_dev - c.delta_val, utc=True)
         self.start_dev = self.end_train + pd.Timedelta(hours=1)
