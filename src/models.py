@@ -5,6 +5,7 @@ import logging
 import re
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import shap
 from lightgbm import LGBMRegressor
@@ -396,7 +397,8 @@ class ForecasterRecursiveModel:
         shap.initjs()
         explainer = shap.TreeExplainer(self.forecaster.regressor)
         shap_values = explainer.shap_values(X_train)
-        shap_importance = pd.Series(shap_values.values, index=X_train.columns).abs().sort_values(ascending=False)
+        average_shap_values = np.abs(shap_values).mean(axis=0)
+        shap_importance = pd.Series(average_shap_values, index=X_train.columns).abs().sort_values(ascending=False)
         return shap_importance
 
 
