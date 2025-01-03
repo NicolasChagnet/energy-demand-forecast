@@ -62,7 +62,7 @@ def train_new_model(model_class: type[ForecasterRecursiveModel], n_iteration: in
     current_data = data.load_full_data()
     latest_idx = current_data.index[-1]
     end_train_cutoff = latest_idx - pd.Timedelta(days=1)
-    model = model_class(n_iteration, end_dev=end_train_cutoff)
+    model = model_class(n_iteration, end_dev=end_train_cutoff, train_size=config.train_size)
     model.tune()
 
 
