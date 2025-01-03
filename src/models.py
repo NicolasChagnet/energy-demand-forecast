@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 
 import pandas as pd
+import shap
 from lightgbm import LGBMRegressor
 from optuna.trial import Trial
 from skforecast.model_selection import TimeSeriesFold, backtesting_forecaster, bayesian_search_forecaster
@@ -113,14 +114,22 @@ class ForecasterRecursiveModel:
     forecaster: ForecasterRecursive
     name: str
 
-    def __init__(self, iteration: int, end_dev: str = None):
+    def __init__(
+        self,
+        iteration: int,
+        end_dev: str = None,
+        train_size: pd.Timedelta | None = None,
+        save_model_to_file: bool = True,
+    ):
         self.iteration = iteration
         self.start_train = c.start_train
         self.end_dev = pd.to_datetime(end_dev if end_dev is not None else c.end_train_default, utc=True)
         self.end_train = pd.to_datetime(self.end_dev - c.delta_val, utc=True)
         self.start_dev = self.end_train + pd.Timedelta(hours=1)
         self.start_future = self.end_dev + pd.Timedelta(hours=1)
+        self.train_size = train_size
         self.is_tuned = False
+        self.save_model_to_file = save_model_to_file
         self.results_tuning = None
         self.metrics = ["mean_absolute_error", "mean_absolute_percentage_error"]
         self.best_params: dict | None = None
@@ -133,30 +142,26 @@ class ForecasterRecursiveModel:
         logger.info(f"Saving {self.name.upper()} Forecaster {self.iteration} to {path_to_save}.")
         io.save_to_file(self, path_to_save)
 
-    def _build_cv_dev(self, train_size: int) -> TimeSeriesFold:
-        """Build cross validation time folds for hyperparameter tuning."""
+    def _build_cv(self, train_size: int, fixed_train_size: bool = False, refit: int | bool = False) -> TimeSeriesFold:
+        """Build cross validation timefolds for hyperparameter tuning and backtesting."""
         return TimeSeriesFold(
             steps=c.predict_size,
-            # refit=c.refit_size,
-            refit=False,
+            refit=refit,
             initial_train_size=train_size,
-            fixed_train_size=False,
+            fixed_train_size=fixed_train_size,
             gap=0,
             skip_folds=None,
             allow_incomplete_fold=True,
         )
 
-    def _build_cv_test(self, train_size: int) -> TimeSeriesFold:
-        """Build cross validation time folds for backtesting."""
-        return TimeSeriesFold(
-            steps=c.predict_size,
-            refit=c.refit_size,
-            initial_train_size=train_size,
-            fixed_train_size=False,
-            gap=0,
-            skip_folds=None,
-            allow_incomplete_fold=True,
-        )
+    def _get_init_train(self, min_val: pd.Timestamp) -> pd.Timestamp:
+        """Returns the beginning of the training period computed from parameters."""
+        if self.train_size is None:
+            start_train = min_val
+        else:
+            init_train_computed = self.end_dev - self.train_size
+            start_train = max(min_val, init_train_computed)  # Cap with minimum index
+        return start_train
 
     def fit_with_best(self) -> None:
         """After being tuned, fit the forecaster with the recorded best parameters and best results."""
@@ -178,11 +183,14 @@ class ForecasterRecursiveModel:
         logger.info("Setting lags...")
         self.forecaster.set_lags(self.best_lags)
 
+        # Figure out the beginning of the training
+        start_train = self._get_init_train(y.index.min())
+
         # Fitting
         logger.info(
-            f"Fitting over the whole training and dev sets {y.index[0].strftime(c.FORMAT_DATE_CSV)} - {self.end_dev.strftime(c.FORMAT_DATE_CSV)} ..."
+            f"Fitting over the whole training and dev sets {start_train.strftime(c.FORMAT_DATE_CSV)} - {self.end_dev.strftime(c.FORMAT_DATE_CSV)} ..."
         )
-        self.forecaster.fit(y.loc[: self.end_dev], exog=X)
+        self.forecaster.fit(y.loc[start_train : self.end_dev], exog=X)
         logger.info("Training done!")
 
     def tune(self) -> None:
@@ -195,14 +203,19 @@ class ForecasterRecursiveModel:
         y = LinearlyInterpolateTS().apply(y)
         X = self.preprocessor.build(start_date=y.index.min(), end_date=self.end_dev)
 
+        # Figure out the beginning of the training
+        start_train = self._get_init_train(y.index.min())
+        # If no fixed train size provided, do not keep it fixed
+        fixed_train_size = self.train_size is not None
+
         # Perform bayesian search
         results, _ = bayesian_search_forecaster(
             forecaster=self.forecaster,
-            y=y.loc[: self.end_dev],
-            cv=self._build_cv_dev(len(y.loc[: self.end_train])),
+            y=y.loc[start_train : self.end_dev],
+            cv=self._build_cv(len(y.loc[start_train : self.end_train]), fixed_train_size=fixed_train_size, refit=False),
             search_space=SEARCH_SPACES[self.name],
             metric=self.metrics,
-            exog=X.loc[: self.end_dev],
+            exog=X.loc[start_train : self.end_dev],
             return_best=False,
             random_state=c.random_state,
             verbose=False,
@@ -219,11 +232,12 @@ class ForecasterRecursiveModel:
 
         # Fit the model with the best params and lags
         self.fit_with_best()
-        logger.info(f"Model trained with data from {y.index.min()} until {self.end_dev}!")
+        logger.info(f"Model trained with data from {start_train} until {self.end_dev}!")
 
         # Saved the model to file
         self.is_tuned = True
-        self.save_to_file()
+        if self.save_model_to_file:
+            self.save_to_file()
 
     def backtest(self) -> None:
         """Backtesting the forecaster on the test data."""
@@ -237,11 +251,16 @@ class ForecasterRecursiveModel:
         # Fit forecaster over the entire train + dev sets
         self.fit_with_best()
 
+        # Figure out the beginning of the training
+        start_train = self._get_init_train(y.index.min())
+        # If no fixed train size provided, do not keep it fixed
+        fixed_train_size = self.train_size is not None
+
         # Evaluate the model on the test data
         metrics, _ = backtesting_forecaster(
             self.forecaster,
             y,
-            cv=self._build_cv_test(len(y.loc[: self.end_dev])),
+            cv=self._build_cv(len(y.loc[start_train : self.end_dev]), fixed_train_size=fixed_train_size, refit=False),
             metric=self.metrics,
             exog=X,
             random_state=c.random_state,
@@ -282,20 +301,32 @@ class ForecasterRecursiveModel:
         )
         return metrics, (y.loc[idx_future], y_predicted)
 
-    def get_training(self) -> tuple[dict, tuple[pd.Series, pd.Series]]:
-        """Get the error on the training dataset."""
-        logger.info(f"Obtaining training estimation with Forecaster {self.iteration}")
+    def _get_training_data(self) -> tuple[pd.DataFrame, pd.Series]:
+        """Create the training data with lags and window features."""
         # Load the data
         y = data.load_timeseries()
         y = LinearlyInterpolateTS().apply(y)
         X = self.preprocessor.build(start_date=y.index.min(), end_date=self.end_dev)
+
+        # Figure out the beginning of the training
+        start_train = self._get_init_train(y.index.min())
+
+        # Predict for training data
+        X_train, y_train = self.forecaster.create_train_X_y(
+            y=y.loc[start_train : self.end_dev], exog=X.loc[start_train : self.end_dev]
+        )
+        return X_train, y_train
+
+    def get_training(self) -> tuple[dict, tuple[pd.Series, pd.Series]]:
+        """Get the error on the training dataset."""
+        logger.info(f"Obtaining training estimation with Forecaster {self.iteration}")
 
         # Tune the model if it has not been done already
         if not self.is_tuned:
             self.tune()
 
         # Predict for training data
-        X_train, y_train = self.forecaster.create_train_X_y(y=y.loc[: self.end_dev], exog=X.loc[: self.end_dev])
+        X_train, y_train = self._get_training_data()
         y_train_pred = pd.Series(self.forecaster.regressor.predict(X_train), index=y_train.index)
 
         # Evaluate solution
@@ -351,9 +382,24 @@ class ForecasterRecursiveModel:
             return None
         return self.forecaster.get_feature_importances()
 
+    def get_global_shap_feature_importance(self) -> pd.Series:
+        # Load training data
+        X_train, y_train = self._get_training_data()
+
+        # Check if model is tuned
+        if self.best_params is None or self.best_lags is None:
+            logger.warning("Model is not tuned!")
+            return pd.Series(data=[], index=X_train.columns)
+
+        shap.initjs()
+        explainer = shap.TreeExplainer(self.forecaster.regressor)
+        shap_values = explainer.shap_values(X_train)
+        shap_importance = pd.Series(shap_values.values, index=X_train.columns).abs().sort_values(ascending=False)
+        return shap_importance
+
 
 class ForecasterRecursiveLGBM(ForecasterRecursiveModel):
-    def __init__(self, iteration, end_dev=None):
+    def __init__(self, iteration: int, *args, **kwargs):
         self.forecaster = ForecasterRecursive(
             regressor=LGBMRegressor(random_state=c.random_state, n_jobs=-1, verbose=-1),
             lags=12,
@@ -361,14 +407,14 @@ class ForecasterRecursiveLGBM(ForecasterRecursiveModel):
         )
         self.name = "lgbm"
         logger.info(f"Initializing {self.name.upper()} Forecaster {iteration}")
-        super().__init__(iteration=iteration, end_dev=end_dev)
+        super().__init__(iteration, *args, **kwargs)
 
 
 class ForecasterRecursiveXGB(ForecasterRecursiveModel):
-    def __init__(self, iteration, end_dev=None):
+    def __init__(self, iteration: int, *args, **kwargs):
         self.forecaster = ForecasterRecursive(
             regressor=XGBRegressor(random_state=c.random_state, n_jobs=-1), lags=12, window_features=window_features
         )
         self.name = "xgb"
         logger.info(f"Initializing {self.name.upper()} Forecaster {iteration}")
-        super().__init__(iteration=iteration, end_dev=end_dev)
+        super().__init__(iteration, *args, **kwargs)
