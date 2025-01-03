@@ -239,7 +239,7 @@ class ForecasterRecursiveModel:
         if self.save_model_to_file:
             self.save_to_file()
 
-    def backtest(self) -> None:
+    def backtest(self) -> pd.DataFrame:
         """Backtesting the forecaster on the test data."""
         logger.info(f"Backtesting {self.name.upper()} Forecaster {self.iteration}")
 
@@ -266,6 +266,7 @@ class ForecasterRecursiveModel:
             random_state=c.random_state,
         )
         logger.info(f"Backtesting results: {metrics.to_dict()}.")
+        return metrics
 
     def predict(self, delta_predict: pd.Timedelta | None = None) -> tuple[dict, tuple[pd.Series, pd.Series]]:
         """Get the error and the prediction from the model."""
@@ -333,7 +334,7 @@ class ForecasterRecursiveModel:
         metrics = dict()
         metrics["mape"] = mean_absolute_percentage_error(y_train, y_train_pred)
         metrics["mae"] = mean_absolute_error(y_train, y_train_pred)
-        logger.info(f"Backtesting on training data with MAPE {metrics['mape']:.2f}, MAE {metrics['mae']:.2f}!")
+        logger.info(f"Testing on training data with MAPE {metrics['mape']:.2f}, MAE {metrics['mae']:.2f}!")
         return metrics, (y_train, y_train_pred)
 
     def get_error_forecast(self, delta_predict: pd.Timedelta | None = None) -> tuple[dict, tuple[pd.Series, pd.Series]]:
