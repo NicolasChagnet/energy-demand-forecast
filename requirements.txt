@@ -120,7 +120,7 @@ patsy==1.0.1
     # via statsmodels
 pexpect==4.9.0
     # via ipython
-pillow==10.4.0
+pillow==11.1.0
     # via matplotlib
 platformdirs==4.3.6
     # via jupyter-core
