@@ -41,9 +41,7 @@ class ExogBuilder:
             )
             for period in self.periods
         ]
-        self.holidays_list = []
-        if country_code is not None:
-            self.holidays_list = holidays.country_holidays(country_code)
+        self.holidays_list = holidays.country_holidays(country_code) if country_code is not None else None
 
     def _get_time_columns(self, X: pd.DataFrame) -> pd.DataFrame:
         """Builds the necessary calendar columns out of the datetime index."""
