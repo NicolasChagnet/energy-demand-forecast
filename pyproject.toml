@@ -32,5 +32,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "kaleido==0.2.0",
+    "orca>=1.8",
     "pre-commit>=4.0.1",
 ]
