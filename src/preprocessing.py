@@ -83,6 +83,9 @@ class ExogBuilder:
         if self.holidays_list is not None:
             X_["holidays"] = X_.index.isin(self.holidays_list).astype("int")
 
+        # Add the weekend
+        X_["is_weekend"] = X_.index.dayofweek.isin([5, 6]).astype("int")
+
         return X_
 
 
