@@ -1,4 +1,5 @@
 import logging
+from pathlib import Path
 
 import pandas as pd
 import plotly.graph_objects as go
@@ -73,3 +74,7 @@ class PredictionFigure:
                 j2_template = Template(template_file.read())
                 logging.info(f"Writing plot to {c.path_output_html}...")
                 output_file.write(j2_template.render(to_plot))
+
+    def save_to_file(self, path_to_file: Path | str, **kwargs) -> None:
+        """Save figure to file."""
+        self.fig.write_image(path_to_file, **kwargs)
