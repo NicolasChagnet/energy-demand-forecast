@@ -156,12 +156,12 @@ class ForecasterRecursiveModel:
             allow_incomplete_fold=True,
         )
 
-    def _get_init_train(self, min_val: pd.Timestamp) -> pd.Timestamp:
+    def _get_init_train(self, min_val: pd.Timestamp, end_val: pd.Timestamp) -> pd.Timestamp:
         """Returns the beginning of the training period computed from parameters."""
         if self.train_size is None:
             start_train = min_val
         else:
-            init_train_computed = self.end_dev - self.train_size
+            init_train_computed = end_val - self.train_size
             start_train = max(min_val, init_train_computed)  # Cap with minimum index
         return start_train
 
@@ -186,7 +186,7 @@ class ForecasterRecursiveModel:
         self.forecaster.set_lags(self.best_lags)
 
         # Figure out the beginning of the training
-        start_train = self._get_init_train(y.index.min())
+        start_train = self._get_init_train(y.index.min(), self.end_dev)
 
         # Fitting
         logger.info(
@@ -206,15 +206,16 @@ class ForecasterRecursiveModel:
         X = self.preprocessor.build(start_date=y.index.min(), end_date=self.end_dev)
 
         # Figure out the beginning of the training
-        start_train = self._get_init_train(y.index.min())
+        start_train = self._get_init_train(y.index.min(), self.end_train)
         # If no fixed train size provided, do not keep it fixed
         fixed_train_size = self.train_size is not None
+        length_training = len(y.loc[start_train : self.end_train])
 
         # Perform bayesian search
         results, _ = bayesian_search_forecaster(
             forecaster=self.forecaster,
             y=y.loc[start_train : self.end_dev],
-            cv=self._build_cv(len(y.loc[start_train : self.end_train]), fixed_train_size=fixed_train_size, refit=False),
+            cv=self._build_cv(train_size=length_training, fixed_train_size=fixed_train_size, refit=False),
             search_space=SEARCH_SPACES[self.name],
             metric=self.metrics,
             exog=X.loc[start_train : self.end_dev],
@@ -254,15 +255,16 @@ class ForecasterRecursiveModel:
         self.fit_with_best()
 
         # Figure out the beginning of the training
-        start_train = self._get_init_train(y.index.min())
+        start_train = self._get_init_train(y.index.min(), self.end_dev)
         # If no fixed train size provided, do not keep it fixed
         fixed_train_size = self.train_size is not None
+        length_training = len(y.loc[start_train : self.end_train])
 
         # Evaluate the model on the test data
         metrics, _ = backtesting_forecaster(
             self.forecaster,
             y,
-            cv=self._build_cv(len(y.loc[start_train : self.end_dev]), fixed_train_size=fixed_train_size, refit=False),
+            cv=self._build_cv(train_size=length_training, fixed_train_size=fixed_train_size, refit=False),
             metric=self.metrics,
             exog=X,
             random_state=c.random_state,
@@ -312,7 +314,7 @@ class ForecasterRecursiveModel:
         X = self.preprocessor.build(start_date=y.index.min(), end_date=self.end_dev)
 
         # Figure out the beginning of the training
-        start_train = self._get_init_train(y.index.min())
+        start_train = self._get_init_train(y.index.min(), self.end_dev)
 
         # Predict for training data
         X_train, y_train = self.forecaster.create_train_X_y(
@@ -385,20 +387,23 @@ class ForecasterRecursiveModel:
             return None
         return self.forecaster.get_feature_importances()
 
-    def get_global_shap_feature_importance(self) -> pd.Series:
+    def get_global_shap_feature_importance(self, frac: float = 0.1) -> pd.Series:
         # Load training data
         X_train, y_train = self._get_training_data()
+        X_train_sample = X_train.sample(frac=frac)
 
         # Check if model is tuned
         if self.best_params is None or self.best_lags is None:
             logger.warning("Model is not tuned!")
-            return pd.Series(data=[], index=X_train.columns)
+            return pd.Series(data=[], index=X_train_sample.columns)
 
         shap.initjs()
         explainer = shap.TreeExplainer(self.forecaster.regressor)
-        shap_values = explainer.shap_values(X_train)
+        shap_values = explainer.shap_values(X_train_sample)
         average_shap_values = np.abs(shap_values).mean(axis=0)
-        shap_importance = pd.Series(average_shap_values, index=X_train.columns).abs().sort_values(ascending=False)
+        shap_importance = (
+            pd.Series(average_shap_values, index=X_train_sample.columns).abs().sort_values(ascending=False)
+        )
         return shap_importance
 
 
