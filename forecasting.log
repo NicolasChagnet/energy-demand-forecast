@@ -1123,3 +1123,138 @@ Name: 0, dtype: object
 2025-01-04 17:55:02,684 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
 2025-01-04 17:55:02,817 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
 2025-01-04 17:55:02,818 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 08:54:21,752 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 08:54:21,753 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:54:22,991 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:54:22,991 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 08:54:23,388 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 08:54:23,528 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:54:23,813 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:54:23,954 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 08:54:23,954 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 08:54:48,012 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 08:54:48,013 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:54:49,088 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:54:49,089 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 08:54:49,484 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 08:54:49,625 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:54:49,915 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:54:50,057 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 08:54:50,057 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 08:56:01,047 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 08:56:01,047 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:56:02,517 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:56:02,519 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 08:56:03,379 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 08:56:03,593 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:56:04,033 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:56:04,210 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 08:56:04,210 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 08:57:03,249 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 08:57:03,250 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:57:04,437 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:57:04,437 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 08:57:04,876 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 08:57:05,132 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:57:05,518 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:57:05,697 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 08:57:05,697 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 08:57:12,314 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 08:57:12,314 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:57:13,390 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:57:13,391 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 08:57:13,778 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 08:57:13,917 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:57:14,206 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:57:14,347 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 08:57:14,347 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 08:59:48,418 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 08:59:48,418 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:59:49,898 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:59:49,898 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 08:59:50,300 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 08:59:50,444 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 08:59:50,740 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 08:59:50,879 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 08:59:50,879 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 08:59:59,234 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 08:59:59,235 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:00:00,631 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:00:00,631 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 09:00:01,032 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 09:00:01,178 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:00:01,467 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:00:01,603 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 09:00:01,603 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 09:01:37,435 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 09:01:37,435 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:01:39,097 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:01:39,098 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 09:01:39,677 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 09:01:39,932 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:01:40,476 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:01:40,645 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 09:01:40,645 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 09:03:11,964 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 09:03:11,965 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:03:13,386 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:03:13,387 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 09:03:13,780 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 09:03:13,926 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:03:14,221 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:03:14,356 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 09:03:14,356 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 09:03:37,541 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 09:03:37,541 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:03:39,456 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:03:39,458 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 09:03:40,182 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 09:03:40,358 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:03:40,664 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:03:40,805 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 09:03:40,805 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 09:06:26,476 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 09:06:26,476 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:06:28,062 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:06:28,063 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 09:06:28,491 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 09:06:28,641 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:06:28,939 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:06:29,075 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 09:06:29,075 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 09:07:12,275 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 09:07:12,276 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:07:13,416 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:07:13,417 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 09:07:13,862 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 09:07:14,084 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:07:14,465 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:07:14,615 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 09:07:14,615 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 09:07:26,581 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 09:07:26,581 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:07:28,277 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:07:28,278 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 09:07:28,727 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 09:07:28,928 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:07:29,553 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:07:29,770 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 09:07:29,771 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 09:07:51,373 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 09:07:51,373 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:07:52,493 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:07:52,493 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 09:07:52,899 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 09:07:53,047 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:07:53,351 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:07:53,492 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 09:07:53,492 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
+2025-01-07 09:08:23,076 INFO get_model_prediction(55) Making predictions using previous model...
+2025-01-07 09:08:23,076 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:08:24,188 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:08:24,188 INFO get_error_training(327) Obtaining training estimation with Forecaster 0
+2025-01-07 09:08:24,587 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 331.21!
+2025-01-07 09:08:24,727 INFO predict(277) Making predictions with LGBM Forecaster 0
+2025-01-07 09:08:25,021 INFO predict(304) Comparison between data and predicted until 2025-01-03 00:00:00+00:00, MAPE: 0.06, MAE: 4371.49
+2025-01-07 09:08:25,158 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.06476003201428047), 'mae': np.float64(4371.488414057053)}!
+2025-01-07 09:08:25,158 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.037763677715175054), 'mae': np.float64(2477.75)}!
