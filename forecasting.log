@@ -1674,3 +1674,41 @@ Name: 0, dtype: object
 2025-03-05 01:37:42,127 INFO predict(304) Comparison between data and predicted until 2025-02-28 01:00:00+00:00, MAPE: 0.03, MAE: 1749.99
 2025-03-05 01:37:42,287 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.030699011324155274), 'mae': np.float64(1815.305090843545)}!
 2025-03-05 01:37:42,287 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.02088876386133337), 'mae': np.float64(1236.9722222222222)}!
+2025-03-07 01:38:23,962 INFO merge_raw_files(41) Merging raw files...
+2025-03-07 01:38:24,672 INFO download_new_data(24) Downloading new data...
+2025-03-07 01:38:25,832 INFO merge_raw_files(41) Merging raw files...
+2025-03-07 01:38:28,750 INFO train_new_model(61) Training new model...
+2025-03-07 01:38:28,831 INFO __init__(418) Initializing LGBM Forecaster 9
+2025-03-07 01:38:28,831 INFO tune(200) Tuning LGBM Forecaster 9
+2025-03-07 01:39:21,904 INFO tune(229) Tuning results: 
+2025-03-07 01:39:21,905 INFO tune(232) Best parameters:
+ lags                              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14...
+params                            {'num_leaves': 118, 'max_depth': 4, 'learning_...
+mean_absolute_error                                                     1855.328316
+mean_absolute_percentage_error                                             0.029162
+num_leaves                                                                    118.0
+max_depth                                                                       4.0
+learning_rate                                                              0.182366
+n_estimators                                                                  141.0
+bagging_fraction                                                            0.59076
+feature_fraction                                                           0.922387
+reg_alpha                                                                  6.981604
+reg_lambda                                                                18.781352
+name                                                                           lgbm
+Name: 0, dtype: object
+2025-03-07 01:39:21,905 INFO fit_with_best(170) Fitting LGBM Forecaster 9 for predictions
+2025-03-07 01:39:22,226 INFO fit_with_best(183) Setting parameters...
+2025-03-07 01:39:22,226 INFO fit_with_best(185) Setting lags...
+2025-03-07 01:39:22,227 INFO fit_with_best(192) Fitting over the whole training and dev sets 07.03.2022 00:00 - 06.03.2025 00:00 ...
+2025-03-07 01:39:22,679 INFO fit_with_best(196) Training done!
+2025-03-07 01:39:22,681 INFO tune(238) Model trained with data from 2021-12-27 00:00:00+00:00 until 2025-03-06 00:00:00+00:00!
+2025-03-07 01:39:22,682 INFO save_to_file(144) Saving LGBM Forecaster 9 to /home/runner/work/energy-demand-forecast/energy-demand-forecast/models/lgbm_forecaster_9.joblib.
+2025-03-07 01:39:24,848 INFO get_model_prediction(55) Making predictions using previous model...
+2025-03-07 01:39:24,848 INFO predict(277) Making predictions with LGBM Forecaster 9
+2025-03-07 01:39:26,141 INFO predict(304) Comparison between data and predicted until 2025-03-07 00:00:00+00:00, MAPE: 0.02, MAE: 1373.47
+2025-03-07 01:39:26,142 INFO get_error_training(327) Obtaining training estimation with Forecaster 9
+2025-03-07 01:39:26,529 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 471.75!
+2025-03-07 01:39:26,690 INFO predict(277) Making predictions with LGBM Forecaster 9
+2025-03-07 01:39:27,030 INFO predict(304) Comparison between data and predicted until 2025-03-07 00:00:00+00:00, MAPE: 0.02, MAE: 1373.47
+2025-03-07 01:39:27,190 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.024600856047574195), 'mae': np.float64(1373.4749500756373)}!
+2025-03-07 01:39:27,190 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.02650675320148727), 'mae': np.float64(1515.7083333333333)}!
