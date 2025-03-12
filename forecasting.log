@@ -1725,3 +1725,16 @@ Name: 0, dtype: object
 2025-03-10 01:16:09,031 INFO predict(304) Comparison between data and predicted until 2025-03-07 01:00:00+00:00, MAPE: 0.02, MAE: 1377.93
 2025-03-10 01:16:09,196 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.0894056896051858), 'mae': np.float64(4205.801266690408)}!
 2025-03-10 01:16:09,196 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.02109922070430999), 'mae': np.float64(1048.9895833333333)}!
+2025-03-12 01:37:14,999 INFO merge_raw_files(41) Merging raw files...
+2025-03-12 01:37:15,720 INFO download_new_data(24) Downloading new data...
+2025-03-12 01:37:16,836 INFO merge_raw_files(41) Merging raw files...
+2025-03-12 01:37:20,151 INFO handle_training(90) The current model was trained up to about 6 day(s) ago (145h), no retraining necessary...
+2025-03-12 01:37:22,528 INFO get_model_prediction(55) Making predictions using previous model...
+2025-03-12 01:37:22,529 INFO predict(277) Making predictions with LGBM Forecaster 9
+2025-03-12 01:37:24,317 INFO predict(304) Comparison between data and predicted until 2025-03-12 00:00:00+00:00, MAPE: 0.07, MAE: 3406.55
+2025-03-12 01:37:24,318 INFO get_error_training(327) Obtaining training estimation with Forecaster 9
+2025-03-12 01:37:24,716 INFO get_error_training(341) Testing on training data with MAPE 0.01, MAE 471.75!
+2025-03-12 01:37:24,879 INFO predict(277) Making predictions with LGBM Forecaster 9
+2025-03-12 01:37:25,231 INFO predict(304) Comparison between data and predicted until 2025-03-07 01:00:00+00:00, MAPE: 0.02, MAE: 1377.93
+2025-03-12 01:37:25,393 INFO <module>(165) Forecast with metrics {'mape': np.float64(0.07132573238917689), 'mae': np.float64(3406.5546537828186)}!
+2025-03-12 01:37:25,393 INFO <module>(166) Entsoe forecast with metrics {'mape': np.float64(0.020080114231355577), 'mae': np.float64(1035.2777777777778)}!
