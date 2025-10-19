@@ -1,7 +1,7 @@
 name: Download and Train Model
 on:
-    schedule:
-        - cron: "0 0 * * MON,WED,FRI"
+    # schedule:
+        # - cron: "0 0 * * MON,WED,FRI"
     workflow_dispatch:
 jobs:
     download-tune:

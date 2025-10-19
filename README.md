@@ -1,6 +1,8 @@
 # Energy demand forecaster for France
 
-#### -- Project Status: [ Active ]
+#### -- Project Status: [ Archived ]
+
+**NOTE:** This pipeline successfully ran for more than a year without issue. I decided to stop the periodic retraining so as to not waste resources.
 
 ## Project Intro/Objective
 The goal of this project is to build, train and tune a prediction model for timeseries and then use it to forecast data.
